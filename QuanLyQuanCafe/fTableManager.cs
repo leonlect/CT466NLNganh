@@ -34,5 +34,11 @@ namespace QuanLyQuanCafe
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+
+        private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fInformation f = new fInformation();
+            f.ShowDialog();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
@@ -39,11 +40,14 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
             // 
+            this.ribbon.ApplicationButtonDropDownControl = this.applicationMenu1;
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -58,7 +62,7 @@
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2});
-            this.ribbon.Size = new System.Drawing.Size(1011, 143);
+            this.ribbon.Size = new System.Drawing.Size(1011, 142);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // skinDropDownButtonItem1
@@ -122,10 +126,15 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 534);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 538);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1011, 29);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1011, 25);
+            // 
+            // applicationMenu1
+            // 
+            this.applicationMenu1.Name = "applicationMenu1";
+            this.applicationMenu1.Ribbon = this.ribbon;
             // 
             // menu
             // 
@@ -139,6 +148,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "RibbonForm1";
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +167,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonGroup barButtonGroup1;
+        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
     }
 }

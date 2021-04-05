@@ -56,10 +56,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtPassWord);
             this.groupBox1.Controls.Add(this.txtTaiKhoan);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(570, 227);
+            this.groupBox1.Size = new System.Drawing.Size(494, 227);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
@@ -81,11 +81,11 @@
             // 
             this.txtReenter.Border.Class = "TextBoxBorder";
             this.txtReenter.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtReenter.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReenter.Location = new System.Drawing.Point(245, 182);
+            this.txtReenter.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReenter.Location = new System.Drawing.Point(183, 182);
             this.txtReenter.Name = "txtReenter";
             this.txtReenter.PasswordChar = '*';
-            this.txtReenter.Size = new System.Drawing.Size(295, 30);
+            this.txtReenter.Size = new System.Drawing.Size(295, 29);
             this.txtReenter.TabIndex = 9;
             // 
             // label3
@@ -105,11 +105,11 @@
             // 
             this.txtNewPass.Border.Class = "TextBoxBorder";
             this.txtNewPass.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtNewPass.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPass.Location = new System.Drawing.Point(245, 146);
+            this.txtNewPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPass.Location = new System.Drawing.Point(183, 146);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '*';
-            this.txtNewPass.Size = new System.Drawing.Size(295, 30);
+            this.txtNewPass.Size = new System.Drawing.Size(295, 29);
             this.txtNewPass.TabIndex = 8;
             // 
             // label4
@@ -129,11 +129,12 @@
             // 
             this.txtDisplayName.Border.Class = "TextBoxBorder";
             this.txtDisplayName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtDisplayName.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDisplayName.Location = new System.Drawing.Point(245, 74);
+            this.txtDisplayName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDisplayName.Location = new System.Drawing.Point(183, 74);
             this.txtDisplayName.Name = "txtDisplayName";
-            this.txtDisplayName.Size = new System.Drawing.Size(295, 30);
+            this.txtDisplayName.Size = new System.Drawing.Size(295, 29);
             this.txtDisplayName.TabIndex = 6;
+            this.txtDisplayName.Text = "Anh Duy Le";
             // 
             // label1
             // 
@@ -162,12 +163,13 @@
             // 
             this.txtPassWord.Border.Class = "TextBoxBorder";
             this.txtPassWord.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtPassWord.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassWord.Location = new System.Drawing.Point(245, 110);
+            this.txtPassWord.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassWord.Location = new System.Drawing.Point(183, 110);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.PasswordChar = '*';
-            this.txtPassWord.Size = new System.Drawing.Size(295, 30);
+            this.txtPassWord.Size = new System.Drawing.Size(295, 29);
             this.txtPassWord.TabIndex = 7;
+            this.txtPassWord.Text = "******";
             // 
             // txtTaiKhoan
             // 
@@ -177,15 +179,16 @@
             this.txtTaiKhoan.Border.Class = "TextBoxBorder";
             this.txtTaiKhoan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtTaiKhoan.Enabled = false;
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(245, 38);
+            this.txtTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaiKhoan.Location = new System.Drawing.Point(183, 38);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(295, 30);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(295, 29);
             this.txtTaiKhoan.TabIndex = 5;
+            this.txtTaiKhoan.Text = "duyanh";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(415, 258);
+            this.btnUpdate.Location = new System.Drawing.Point(339, 256);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 1;
@@ -193,7 +196,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(507, 258);
+            this.btnExit.Location = new System.Drawing.Point(431, 256);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 2;
@@ -205,7 +208,7 @@
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(608, 303);
+            this.ClientSize = new System.Drawing.Size(515, 303);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.groupBox1);

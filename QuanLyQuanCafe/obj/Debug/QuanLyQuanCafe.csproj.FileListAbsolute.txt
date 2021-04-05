@@ -59,3 +59,4 @@ D:\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.csprojAssemblyReferenc
 D:\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fTableManager.resources
 D:\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fAccountProfile.resources
 D:\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fAdmin.resources
+D:\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fInformation.resources
