@@ -29,15 +29,15 @@ namespace QuanLyQuanCafe
             f.ShowDialog();
         }
 
-        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fAdmin f = new fAdmin();
-            f.ShowDialog();
-        }
-
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fInformation f = new fInformation();
+            f.ShowDialog();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fAdmin f = new fAdmin();
             f.ShowDialog();
         }
     }

@@ -134,7 +134,6 @@
             this.txtDisplayName.Name = "txtDisplayName";
             this.txtDisplayName.Size = new System.Drawing.Size(295, 29);
             this.txtDisplayName.TabIndex = 6;
-            this.txtDisplayName.Text = "Anh Duy Le";
             // 
             // label1
             // 
@@ -169,7 +168,6 @@
             this.txtPassWord.PasswordChar = '*';
             this.txtPassWord.Size = new System.Drawing.Size(295, 29);
             this.txtPassWord.TabIndex = 7;
-            this.txtPassWord.Text = "******";
             // 
             // txtTaiKhoan
             // 
@@ -184,21 +182,24 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(295, 29);
             this.txtTaiKhoan.TabIndex = 5;
-            this.txtTaiKhoan.Text = "duyanh";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(339, 256);
+            this.btnUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Appearance.Options.UseFont = true;
+            this.btnUpdate.Location = new System.Drawing.Point(334, 245);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 34);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Cập nhật";
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(431, 256);
+            this.btnExit.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Appearance.Options.UseFont = true;
+            this.btnExit.Location = new System.Drawing.Point(415, 245);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(75, 34);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Thoát";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -208,7 +209,7 @@
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 303);
+            this.ClientSize = new System.Drawing.Size(515, 290);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.groupBox1);
