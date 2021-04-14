@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcTable = new DevExpress.XtraTab.XtraTabControl();
             this.tpBill = new DevExpress.XtraTab.XtraTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,25 +45,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpkFromDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.tpFood = new DevExpress.XtraTab.XtraTabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tpCategory = new DevExpress.XtraTab.XtraTabPage();
-            this.tpTable = new DevExpress.XtraTab.XtraTabPage();
-            this.tpAccount = new DevExpress.XtraTab.XtraTabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtFoodID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtFoodName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbCategory = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtSearchFoodName = new System.Windows.Forms.TextBox();
-            this.btnSearchFoodName = new DevExpress.XtraEditors.SimpleButton();
-            this.nmFoodPrice = new System.Windows.Forms.NumericUpDown();
-            this.btnAddFood = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEditFood = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDeleteFood = new DevExpress.XtraEditors.SimpleButton();
-            this.btnShowFood = new DevExpress.XtraEditors.SimpleButton();
             this.dtgvFood = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnShowFood = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDeleteFood = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEditFood = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAddFood = new DevExpress.XtraEditors.SimpleButton();
+            this.nmFoodPrice = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbCategory = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFoodName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtFoodID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnSearchFoodName = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSearchFoodName = new System.Windows.Forms.TextBox();
+            this.tpCategory = new DevExpress.XtraTab.XtraTabPage();
+            this.dtgvCategory = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnShowCategory = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteCategory = new DevExpress.XtraEditors.SimpleButton();
@@ -73,9 +72,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtCategoryID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dtgvCategory = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.tpTable = new DevExpress.XtraTab.XtraTabPage();
             this.dtgvTable = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.cbTableStatus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.label11 = new System.Windows.Forms.Label();
             this.btnShowTable = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteTable = new DevExpress.XtraEditors.SimpleButton();
             this.btnEditTable = new DevExpress.XtraEditors.SimpleButton();
@@ -84,10 +85,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtTableID = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cbTableStatus = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.tpAccount = new DevExpress.XtraTab.XtraTabPage();
             this.dtgvAccount = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnResetPassword = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAccount = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteAccount = new DevExpress.XtraEditors.SimpleButton();
             this.btnEditAccount = new DevExpress.XtraEditors.SimpleButton();
@@ -98,7 +99,10 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnResetPassword = new DevExpress.XtraEditors.SimpleButton();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DisplayName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PassWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tcTable)).BeginInit();
             this.tcTable.SuspendLayout();
             this.tpBill.SuspendLayout();
@@ -108,16 +112,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpkToDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpkFromDate)).BeginInit();
             this.tpFood.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.tpCategory.SuspendLayout();
-            this.tpTable.SuspendLayout();
-            this.tpAccount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmFoodPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFood)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmFoodPrice)).BeginInit();
+            this.tpCategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.tpTable.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTable)).BeginInit();
             this.panel5.SuspendLayout();
+            this.tpAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
@@ -164,14 +168,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvBill.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvBill.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvBill.Location = new System.Drawing.Point(4, 4);
             this.dtgvBill.Name = "dtgvBill";
@@ -335,6 +339,23 @@
             this.tpFood.Size = new System.Drawing.Size(599, 468);
             this.tpFood.Text = "Quản lý món";
             // 
+            // dtgvFood
+            // 
+            this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvFood.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgvFood.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dtgvFood.Location = new System.Drawing.Point(3, 161);
+            this.dtgvFood.Name = "dtgvFood";
+            this.dtgvFood.Size = new System.Drawing.Size(577, 262);
+            this.dtgvFood.TabIndex = 10;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnShowFood);
@@ -354,76 +375,67 @@
             this.panel3.Size = new System.Drawing.Size(580, 151);
             this.panel3.TabIndex = 0;
             // 
-            // tpCategory
+            // btnShowFood
             // 
-            this.tpCategory.Controls.Add(this.dtgvCategory);
-            this.tpCategory.Controls.Add(this.panel4);
-            this.tpCategory.Name = "tpCategory";
-            this.tpCategory.Size = new System.Drawing.Size(599, 468);
-            this.tpCategory.Text = "Danh mụch thức ăn";
+            this.btnShowFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowFood.Appearance.Options.UseFont = true;
+            this.btnShowFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFood.ImageOptions.Image")));
+            this.btnShowFood.Location = new System.Drawing.Point(484, 108);
+            this.btnShowFood.Name = "btnShowFood";
+            this.btnShowFood.Size = new System.Drawing.Size(93, 27);
+            this.btnShowFood.TabIndex = 14;
+            this.btnShowFood.Text = "Xem";
             // 
-            // tpTable
+            // btnDeleteFood
             // 
-            this.tpTable.Controls.Add(this.dtgvTable);
-            this.tpTable.Controls.Add(this.panel5);
-            this.tpTable.Name = "tpTable";
-            this.tpTable.Size = new System.Drawing.Size(599, 468);
-            this.tpTable.Text = "Quản lý bàn";
+            this.btnDeleteFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteFood.Appearance.Options.UseFont = true;
+            this.btnDeleteFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteFood.ImageOptions.Image")));
+            this.btnDeleteFood.Location = new System.Drawing.Point(374, 108);
+            this.btnDeleteFood.Name = "btnDeleteFood";
+            this.btnDeleteFood.Size = new System.Drawing.Size(93, 27);
+            this.btnDeleteFood.TabIndex = 13;
+            this.btnDeleteFood.Text = "Xóa";
             // 
-            // tpAccount
+            // btnEditFood
             // 
-            this.tpAccount.Controls.Add(this.dtgvAccount);
-            this.tpAccount.Controls.Add(this.panel6);
-            this.tpAccount.Name = "tpAccount";
-            this.tpAccount.Size = new System.Drawing.Size(599, 468);
-            this.tpAccount.Text = "Quản lý tài khoản";
+            this.btnEditFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditFood.Appearance.Options.UseFont = true;
+            this.btnEditFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditFood.ImageOptions.Image")));
+            this.btnEditFood.Location = new System.Drawing.Point(258, 108);
+            this.btnEditFood.Name = "btnEditFood";
+            this.btnEditFood.Size = new System.Drawing.Size(93, 27);
+            this.btnEditFood.TabIndex = 12;
+            this.btnEditFood.Text = "Sửa";
             // 
-            // label3
+            // btnAddFood
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Mã món:";
+            this.btnAddFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFood.Appearance.Options.UseFont = true;
+            this.btnAddFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFood.ImageOptions.Image")));
+            this.btnAddFood.Location = new System.Drawing.Point(143, 108);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(93, 27);
+            this.btnAddFood.TabIndex = 11;
+            this.btnAddFood.Text = "Thêm";
             // 
-            // txtFoodID
+            // nmFoodPrice
             // 
-            this.txtFoodID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFoodID.Location = new System.Drawing.Point(143, 15);
-            this.txtFoodID.Name = "txtFoodID";
-            this.txtFoodID.ReadOnly = true;
-            this.txtFoodID.Size = new System.Drawing.Size(146, 26);
-            this.txtFoodID.TabIndex = 1;
+            this.nmFoodPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nmFoodPrice.Location = new System.Drawing.Point(431, 60);
+            this.nmFoodPrice.Name = "nmFoodPrice";
+            this.nmFoodPrice.Size = new System.Drawing.Size(146, 26);
+            this.nmFoodPrice.TabIndex = 10;
             // 
-            // label4
+            // label6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(344, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Tên món:";
-            // 
-            // txtFoodName
-            // 
-            this.txtFoodName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFoodName.Location = new System.Drawing.Point(431, 15);
-            this.txtFoodName.Name = "txtFoodName";
-            this.txtFoodName.Size = new System.Drawing.Size(146, 26);
-            this.txtFoodName.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Danh mục món:";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(344, 68);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 19);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Giá:";
             // 
             // cbCategory
             // 
@@ -438,15 +450,63 @@
             this.cbCategory.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbCategory.TabIndex = 5;
             // 
-            // label6
+            // label5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(344, 68);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 19);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Giá:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Danh mục món:";
+            // 
+            // txtFoodName
+            // 
+            this.txtFoodName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFoodName.Location = new System.Drawing.Point(431, 15);
+            this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.Size = new System.Drawing.Size(146, 26);
+            this.txtFoodName.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(344, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 19);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Tên món:";
+            // 
+            // txtFoodID
+            // 
+            this.txtFoodID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFoodID.Location = new System.Drawing.Point(143, 15);
+            this.txtFoodID.Name = "txtFoodID";
+            this.txtFoodID.ReadOnly = true;
+            this.txtFoodID.Size = new System.Drawing.Size(146, 26);
+            this.txtFoodID.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 19);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Mã món:";
+            // 
+            // btnSearchFoodName
+            // 
+            this.btnSearchFoodName.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFoodName.Appearance.Options.UseFont = true;
+            this.btnSearchFoodName.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFoodName.ImageOptions.Image")));
+            this.btnSearchFoodName.Location = new System.Drawing.Point(261, 428);
+            this.btnSearchFoodName.Name = "btnSearchFoodName";
+            this.btnSearchFoodName.Size = new System.Drawing.Size(93, 27);
+            this.btnSearchFoodName.TabIndex = 9;
+            this.btnSearchFoodName.Text = "Tìm kiếm";
             // 
             // txtSearchFoodName
             // 
@@ -456,85 +516,30 @@
             this.txtSearchFoodName.Size = new System.Drawing.Size(244, 26);
             this.txtSearchFoodName.TabIndex = 8;
             // 
-            // btnSearchFoodName
+            // tpCategory
             // 
-            this.btnSearchFoodName.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchFoodName.Appearance.Options.UseFont = true;
-            this.btnSearchFoodName.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnSearchFoodName.Location = new System.Drawing.Point(261, 428);
-            this.btnSearchFoodName.Name = "btnSearchFoodName";
-            this.btnSearchFoodName.Size = new System.Drawing.Size(93, 27);
-            this.btnSearchFoodName.TabIndex = 9;
-            this.btnSearchFoodName.Text = "Tìm kiếm";
+            this.tpCategory.Controls.Add(this.dtgvCategory);
+            this.tpCategory.Controls.Add(this.panel4);
+            this.tpCategory.Name = "tpCategory";
+            this.tpCategory.Size = new System.Drawing.Size(599, 468);
+            this.tpCategory.Text = "Danh mụch thức ăn";
             // 
-            // nmFoodPrice
+            // dtgvCategory
             // 
-            this.nmFoodPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmFoodPrice.Location = new System.Drawing.Point(431, 60);
-            this.nmFoodPrice.Name = "nmFoodPrice";
-            this.nmFoodPrice.Size = new System.Drawing.Size(146, 26);
-            this.nmFoodPrice.TabIndex = 10;
-            // 
-            // btnAddFood
-            // 
-            this.btnAddFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFood.Appearance.Options.UseFont = true;
-            this.btnAddFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btnAddFood.Location = new System.Drawing.Point(143, 108);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(93, 27);
-            this.btnAddFood.TabIndex = 11;
-            this.btnAddFood.Text = "Thêm";
-            // 
-            // btnEditFood
-            // 
-            this.btnEditFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditFood.Appearance.Options.UseFont = true;
-            this.btnEditFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.btnEditFood.Location = new System.Drawing.Point(258, 108);
-            this.btnEditFood.Name = "btnEditFood";
-            this.btnEditFood.Size = new System.Drawing.Size(93, 27);
-            this.btnEditFood.TabIndex = 12;
-            this.btnEditFood.Text = "Sửa";
-            // 
-            // btnDeleteFood
-            // 
-            this.btnDeleteFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteFood.Appearance.Options.UseFont = true;
-            this.btnDeleteFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.btnDeleteFood.Location = new System.Drawing.Point(374, 108);
-            this.btnDeleteFood.Name = "btnDeleteFood";
-            this.btnDeleteFood.Size = new System.Drawing.Size(93, 27);
-            this.btnDeleteFood.TabIndex = 13;
-            this.btnDeleteFood.Text = "Xóa";
-            // 
-            // btnShowFood
-            // 
-            this.btnShowFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowFood.Appearance.Options.UseFont = true;
-            this.btnShowFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.btnShowFood.Location = new System.Drawing.Point(484, 108);
-            this.btnShowFood.Name = "btnShowFood";
-            this.btnShowFood.Size = new System.Drawing.Size(93, 27);
-            this.btnShowFood.TabIndex = 14;
-            this.btnShowFood.Text = "Xem";
-            // 
-            // dtgvFood
-            // 
-            this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvFood.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dtgvFood.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dtgvFood.Location = new System.Drawing.Point(3, 161);
-            this.dtgvFood.Name = "dtgvFood";
-            this.dtgvFood.Size = new System.Drawing.Size(577, 262);
-            this.dtgvFood.TabIndex = 10;
+            this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvCategory.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgvCategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dtgvCategory.Location = new System.Drawing.Point(0, 118);
+            this.dtgvCategory.Name = "dtgvCategory";
+            this.dtgvCategory.Size = new System.Drawing.Size(577, 347);
+            this.dtgvCategory.TabIndex = 11;
             // 
             // panel4
             // 
@@ -555,7 +560,7 @@
             // 
             this.btnShowCategory.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowCategory.Appearance.Options.UseFont = true;
-            this.btnShowCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image1")));
+            this.btnShowCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowCategory.ImageOptions.Image")));
             this.btnShowCategory.Location = new System.Drawing.Point(484, 66);
             this.btnShowCategory.Name = "btnShowCategory";
             this.btnShowCategory.Size = new System.Drawing.Size(93, 27);
@@ -566,7 +571,7 @@
             // 
             this.btnDeleteCategory.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteCategory.Appearance.Options.UseFont = true;
-            this.btnDeleteCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image1")));
+            this.btnDeleteCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteCategory.ImageOptions.Image")));
             this.btnDeleteCategory.Location = new System.Drawing.Point(374, 66);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(93, 27);
@@ -577,7 +582,7 @@
             // 
             this.btnEditCategory.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditCategory.Appearance.Options.UseFont = true;
-            this.btnEditCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image1")));
+            this.btnEditCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditCategory.ImageOptions.Image")));
             this.btnEditCategory.Location = new System.Drawing.Point(258, 66);
             this.btnEditCategory.Name = "btnEditCategory";
             this.btnEditCategory.Size = new System.Drawing.Size(93, 27);
@@ -588,7 +593,7 @@
             // 
             this.btnAddCategory.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCategory.Appearance.Options.UseFont = true;
-            this.btnAddCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image1")));
+            this.btnAddCategory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddCategory.ImageOptions.Image")));
             this.btnAddCategory.Location = new System.Drawing.Point(143, 66);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(93, 27);
@@ -632,34 +637,25 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Mã danh mục:";
             // 
-            // dtgvCategory
+            // tpTable
             // 
-            this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvCategory.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dtgvCategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dtgvCategory.Location = new System.Drawing.Point(0, 118);
-            this.dtgvCategory.Name = "dtgvCategory";
-            this.dtgvCategory.Size = new System.Drawing.Size(577, 347);
-            this.dtgvCategory.TabIndex = 11;
+            this.tpTable.Controls.Add(this.dtgvTable);
+            this.tpTable.Controls.Add(this.panel5);
+            this.tpTable.Name = "tpTable";
+            this.tpTable.Size = new System.Drawing.Size(599, 468);
+            this.tpTable.Text = "Quản lý bàn";
             // 
             // dtgvTable
             // 
             this.dtgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTable.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTable.DefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvTable.Location = new System.Drawing.Point(1, 118);
             this.dtgvTable.Name = "dtgvTable";
@@ -683,11 +679,34 @@
             this.panel5.Size = new System.Drawing.Size(580, 109);
             this.panel5.TabIndex = 12;
             // 
+            // cbTableStatus
+            // 
+            this.cbTableStatus.DisplayMember = "Text";
+            this.cbTableStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTableStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTableStatus.FormattingEnabled = true;
+            this.cbTableStatus.ItemHeight = 20;
+            this.cbTableStatus.Location = new System.Drawing.Point(435, 13);
+            this.cbTableStatus.Name = "cbTableStatus";
+            this.cbTableStatus.Size = new System.Drawing.Size(121, 26);
+            this.cbTableStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbTableStatus.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(357, 16);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 19);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Trạng thái:";
+            // 
             // btnShowTable
             // 
             this.btnShowTable.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowTable.Appearance.Options.UseFont = true;
-            this.btnShowTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image1")));
+            this.btnShowTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowTable.ImageOptions.Image")));
             this.btnShowTable.Location = new System.Drawing.Point(484, 66);
             this.btnShowTable.Name = "btnShowTable";
             this.btnShowTable.Size = new System.Drawing.Size(93, 27);
@@ -698,7 +717,7 @@
             // 
             this.btnDeleteTable.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteTable.Appearance.Options.UseFont = true;
-            this.btnDeleteTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image2")));
+            this.btnDeleteTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteTable.ImageOptions.Image")));
             this.btnDeleteTable.Location = new System.Drawing.Point(374, 66);
             this.btnDeleteTable.Name = "btnDeleteTable";
             this.btnDeleteTable.Size = new System.Drawing.Size(93, 27);
@@ -709,7 +728,7 @@
             // 
             this.btnEditTable.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditTable.Appearance.Options.UseFont = true;
-            this.btnEditTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image2")));
+            this.btnEditTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditTable.ImageOptions.Image")));
             this.btnEditTable.Location = new System.Drawing.Point(258, 66);
             this.btnEditTable.Name = "btnEditTable";
             this.btnEditTable.Size = new System.Drawing.Size(93, 27);
@@ -720,7 +739,7 @@
             // 
             this.btnAddTable.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTable.Appearance.Options.UseFont = true;
-            this.btnAddTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image2")));
+            this.btnAddTable.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddTable.ImageOptions.Image")));
             this.btnAddTable.Location = new System.Drawing.Point(143, 66);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.Size = new System.Drawing.Size(93, 27);
@@ -764,40 +783,30 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Mã bàn:";
             // 
-            // label11
+            // tpAccount
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(357, 16);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 19);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Trạng thái:";
-            // 
-            // cbTableStatus
-            // 
-            this.cbTableStatus.DisplayMember = "Text";
-            this.cbTableStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTableStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTableStatus.FormattingEnabled = true;
-            this.cbTableStatus.ItemHeight = 20;
-            this.cbTableStatus.Location = new System.Drawing.Point(435, 13);
-            this.cbTableStatus.Name = "cbTableStatus";
-            this.cbTableStatus.Size = new System.Drawing.Size(121, 26);
-            this.cbTableStatus.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbTableStatus.TabIndex = 16;
+            this.tpAccount.Controls.Add(this.dtgvAccount);
+            this.tpAccount.Controls.Add(this.panel6);
+            this.tpAccount.Name = "tpAccount";
+            this.tpAccount.Size = new System.Drawing.Size(599, 468);
+            this.tpAccount.Text = "Quản lý tài khoản";
             // 
             // dtgvAccount
             // 
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvAccount.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dtgvAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.UserName,
+            this.DisplayName,
+            this.PassWord,
+            this.Type});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvAccount.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtgvAccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvAccount.Location = new System.Drawing.Point(3, 161);
             this.dtgvAccount.Name = "dtgvAccount";
@@ -822,11 +831,22 @@
             this.panel6.Size = new System.Drawing.Size(580, 151);
             this.panel6.TabIndex = 11;
             // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetPassword.Appearance.Options.UseFont = true;
+            this.btnResetPassword.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnResetPassword.ImageOptions.Image")));
+            this.btnResetPassword.Location = new System.Drawing.Point(446, 110);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(126, 27);
+            this.btnResetPassword.TabIndex = 15;
+            this.btnResetPassword.Text = "Reset password";
+            // 
             // btnShowAccount
             // 
             this.btnShowAccount.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowAccount.Appearance.Options.UseFont = true;
-            this.btnShowAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image3")));
+            this.btnShowAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowAccount.ImageOptions.Image")));
             this.btnShowAccount.Location = new System.Drawing.Point(339, 110);
             this.btnShowAccount.Name = "btnShowAccount";
             this.btnShowAccount.Size = new System.Drawing.Size(93, 27);
@@ -837,7 +857,7 @@
             // 
             this.btnDeleteAccount.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteAccount.Appearance.Options.UseFont = true;
-            this.btnDeleteAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image3")));
+            this.btnDeleteAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDeleteAccount.ImageOptions.Image")));
             this.btnDeleteAccount.Location = new System.Drawing.Point(231, 110);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(93, 27);
@@ -848,7 +868,7 @@
             // 
             this.btnEditAccount.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditAccount.Appearance.Options.UseFont = true;
-            this.btnEditAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image3")));
+            this.btnEditAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditAccount.ImageOptions.Image")));
             this.btnEditAccount.Location = new System.Drawing.Point(118, 110);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(93, 27);
@@ -859,7 +879,7 @@
             // 
             this.btnAddAccount.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddAccount.Appearance.Options.UseFont = true;
-            this.btnAddAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image3")));
+            this.btnAddAccount.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAccount.ImageOptions.Image")));
             this.btnAddAccount.Location = new System.Drawing.Point(9, 110);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(93, 27);
@@ -926,16 +946,33 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Tên tài khoản:";
             // 
-            // btnResetPassword
+            // UserName
             // 
-            this.btnResetPassword.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPassword.Appearance.Options.UseFont = true;
-            this.btnResetPassword.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image2")));
-            this.btnResetPassword.Location = new System.Drawing.Point(446, 110);
-            this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Size = new System.Drawing.Size(126, 27);
-            this.btnResetPassword.TabIndex = 15;
-            this.btnResetPassword.Text = "Reset password";
+            this.UserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "Tên đăng nhập";
+            this.UserName.Name = "UserName";
+            // 
+            // DisplayName
+            // 
+            this.DisplayName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DisplayName.DataPropertyName = "DisplayName";
+            this.DisplayName.HeaderText = "Tên hiển thị";
+            this.DisplayName.Name = "DisplayName";
+            // 
+            // PassWord
+            // 
+            this.PassWord.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PassWord.DataPropertyName = "PassWord";
+            this.PassWord.HeaderText = "Mật khẩu";
+            this.PassWord.Name = "PassWord";
+            // 
+            // Type
+            // 
+            this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Type.DataPropertyName = "Type";
+            this.Type.HeaderText = "Loại tài khoản";
+            this.Type.Name = "Type";
             // 
             // fAdmin
             // 
@@ -957,19 +994,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpkFromDate)).EndInit();
             this.tpFood.ResumeLayout(false);
             this.tpFood.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvFood)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.tpCategory.ResumeLayout(false);
-            this.tpTable.ResumeLayout(false);
-            this.tpAccount.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodPrice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvFood)).EndInit();
+            this.tpCategory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
+            this.tpTable.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTable)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.tpAccount.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -1044,5 +1081,9 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label15;
         private DevExpress.XtraEditors.SimpleButton btnResetPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DisplayName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PassWord;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
     }
 }
