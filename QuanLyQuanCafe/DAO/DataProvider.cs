@@ -11,6 +11,16 @@ namespace QuanLyQuanCafe.DAO
 {
     public class DataProvider
     {
+        private static DataProvider instance;
+
+        //Su dung de tao instance ket noi. Chi ket noi duy nhat 1 lan 1 instance ko can goi lai lien tuc ket noi
+        public static DataProvider Instance {
+            get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
+            private set { DataProvider.instance = value; } 
+        }
+
+        private DataProvider() { }
+
         private string connectionSTR = "Server=DESKTOP-E5AILH0\\SQLEXPRESS; Database = QuanLyQuanCafe; uid=sa;pwd=sa";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
@@ -110,7 +120,6 @@ namespace QuanLyQuanCafe.DAO
             }
             return data;
         }
-
 
     }
 }

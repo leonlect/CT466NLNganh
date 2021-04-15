@@ -35,8 +35,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMatKhau = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtTaiKhoan = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtPassWord = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtUserName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -52,7 +52,7 @@
             this.btnThoat.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 7;
+            this.btnThoat.TabIndex = 2;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -65,7 +65,7 @@
             this.btnLogin.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 6;
+            this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -84,8 +84,8 @@
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtMatKhau);
-            this.groupBox1.Controls.Add(this.txtTaiKhoan);
+            this.groupBox1.Controls.Add(this.txtPassWord);
+            this.groupBox1.Controls.Add(this.txtUserName);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(149, 3);
             this.groupBox1.Name = "groupBox1";
@@ -114,32 +114,34 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Mật khẩu:";
             // 
-            // txtMatKhau
+            // txtPassWord
             // 
             // 
             // 
             // 
-            this.txtMatKhau.Border.Class = "TextBoxBorder";
-            this.txtMatKhau.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtMatKhau.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(132, 73);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(201, 23);
-            this.txtMatKhau.TabIndex = 1;
+            this.txtPassWord.Border.Class = "TextBoxBorder";
+            this.txtPassWord.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtPassWord.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassWord.Location = new System.Drawing.Point(132, 73);
+            this.txtPassWord.Name = "txtPassWord";
+            this.txtPassWord.PasswordChar = '*';
+            this.txtPassWord.Size = new System.Drawing.Size(201, 23);
+            this.txtPassWord.TabIndex = 2;
+            this.txtPassWord.Text = "admin";
             // 
-            // txtTaiKhoan
+            // txtUserName
             // 
             // 
             // 
             // 
-            this.txtTaiKhoan.Border.Class = "TextBoxBorder";
-            this.txtTaiKhoan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(132, 30);
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(201, 23);
-            this.txtTaiKhoan.TabIndex = 1;
+            this.txtUserName.Border.Class = "TextBoxBorder";
+            this.txtUserName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtUserName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(132, 30);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(201, 23);
+            this.txtUserName.TabIndex = 1;
+            this.txtUserName.Text = "admin";
             // 
             // pictureBox1
             // 
@@ -180,8 +182,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMatKhau;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTaiKhoan;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPassWord;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +40,9 @@
             this.doanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel = new System.Windows.Forms.Panel();
-            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.lsvBill = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.cboSwitchTable = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -58,9 +58,10 @@
             this.comboBoxEx2 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboBoxEx1 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).BeginInit();
             this.panel2.SuspendLayout();
@@ -155,38 +156,38 @@
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.dataGridViewX1);
             this.panel.Controls.Add(this.lsvBill);
             this.panel.Location = new System.Drawing.Point(739, 132);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(480, 466);
             this.panel.TabIndex = 2;
             // 
-            // dataGridViewX1
-            // 
-            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dataGridViewX1.Location = new System.Drawing.Point(7, 16);
-            this.dataGridViewX1.Name = "dataGridViewX1";
-            this.dataGridViewX1.Size = new System.Drawing.Size(465, 437);
-            this.dataGridViewX1.TabIndex = 1;
-            // 
             // lsvBill
             // 
+            this.lsvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lsvBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsvBill.GridLines = true;
             this.lsvBill.HideSelection = false;
             this.lsvBill.Location = new System.Drawing.Point(3, 3);
             this.lsvBill.Name = "lsvBill";
             this.lsvBill.Size = new System.Drawing.Size(474, 460);
             this.lsvBill.TabIndex = 0;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
+            this.lsvBill.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tên món";
+            this.columnHeader1.Width = 115;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Số lượng";
+            this.columnHeader2.Width = 77;
             // 
             // panel3
             // 
@@ -337,10 +338,21 @@
             // 
             // flpTable
             // 
+            this.flpTable.AutoScroll = true;
             this.flpTable.Location = new System.Drawing.Point(0, 27);
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(731, 678);
             this.flpTable.TabIndex = 5;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đơn giá";
+            this.columnHeader3.Width = 126;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Thành tiền";
+            this.columnHeader4.Width = 162;
             // 
             // fTableManager
             // 
@@ -359,7 +371,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -400,6 +411,9 @@
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doanhThuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

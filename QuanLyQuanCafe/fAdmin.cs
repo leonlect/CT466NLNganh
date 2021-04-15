@@ -24,11 +24,9 @@ namespace QuanLyQuanCafe
 
         void LoadAccountList()
         {
-            string query = "EXEC USP_GetAccountByUserName @username"; //Khi viet query phai co khoang cach o giua dau ,
-
-            DataProvider provider = new DataProvider();
-
-            dtgvAccount.DataSource = provider.ExecuteQuery(query, new object[] {"staff"});
+            string query = "EXEC USP_GetAccountByUserName @username"; //Khi viet query đa nhiều tham số phai co khoang cach o giua dau , vd @staff , @admin
+            // Gọi DataProvider.Instance để tạo kết nối và truy vấn. Ko cần tạo mới đối tượng DataProvider
+            dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] {"staff"});
         }
     }
 }
