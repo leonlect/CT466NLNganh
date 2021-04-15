@@ -42,6 +42,32 @@ namespace QuanLyQuanCafe.DAO
             return -1;
         }
 
+        public void InsertBill(int id)
+        {
+            DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertBill @idTable", new object[]{id});
+        }
+
+
+       //Lấy ra ID bill lớn nhất hiện tại để thêm vô.
+       public int GetMaxIDBill()
+        {
+            try 
+            { 
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT max(id) FROM Bill"); 
+            }
+            catch
+            {
+                return 1;
+            }
+
+        }
+
+       public void CheckOut(int id, int discount) //Lấy ra Bill checkout cho 1 bill bằng cách truyền vào ID và giá trị discount
+        {
+            string query = "UPDATE Bill SET status = 1, " +  "discount = " + discount + " WHERE id = " + id;
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
 
     }
 }

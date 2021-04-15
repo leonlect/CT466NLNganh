@@ -22,7 +22,8 @@ namespace QuanLyQuanCafe
         {
             if(MessageBox.Show("Bạn có thật sự muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
             {
-                e.Cancel = true;            }
+                e.Cancel = true;            
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
