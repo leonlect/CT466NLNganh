@@ -64,7 +64,7 @@ namespace QuanLyQuanCafe.DAO
 
        public void CheckOut(int id, int discount) //Lấy ra Bill checkout cho 1 bill bằng cách truyền vào ID và giá trị discount
         {
-            string query = "UPDATE Bill SET status = 1, " +  "discount = " + discount + " WHERE id = " + id;
+            string query = "UPDATE Bill SET DateCheckOut=GETDATE(), status = 1, " +  "discount = " + discount + " WHERE id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 

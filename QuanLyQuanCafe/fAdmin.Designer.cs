@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcTable = new DevExpress.XtraTab.XtraTabControl();
             this.tpBill = new DevExpress.XtraTab.XtraTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -46,6 +47,10 @@
             this.dtpkFromDate = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.tpFood = new DevExpress.XtraTab.XtraTabPage();
             this.dtgvFood = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnShowFood = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteFood = new DevExpress.XtraEditors.SimpleButton();
@@ -63,6 +68,8 @@
             this.txtSearchFoodName = new System.Windows.Forms.TextBox();
             this.tpCategory = new DevExpress.XtraTab.XtraTabPage();
             this.dtgvCategory = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.idCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnShowCategory = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteCategory = new DevExpress.XtraEditors.SimpleButton();
@@ -87,6 +94,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tpAccount = new DevExpress.XtraTab.XtraTabPage();
             this.dtgvAccount = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DisplayName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PassWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowAccount = new DevExpress.XtraEditors.SimpleButton();
@@ -99,10 +110,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DisplayName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PassWord = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameTable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tcTable)).BeginInit();
             this.tcTable.SuspendLayout();
             this.tpBill.SuspendLayout();
@@ -168,14 +178,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvBill.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvBill.DefaultCellStyle = dataGridViewCellStyle20;
             this.dtgvBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvBill.Location = new System.Drawing.Point(4, 4);
             this.dtgvBill.Name = "dtgvBill";
@@ -341,20 +351,53 @@
             // 
             // dtgvFood
             // 
+            this.dtgvFood.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvFood.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.name,
+            this.CategoryID,
+            this.price});
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvFood.DefaultCellStyle = dataGridViewCellStyle22;
             this.dtgvFood.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvFood.Location = new System.Drawing.Point(3, 161);
             this.dtgvFood.Name = "dtgvFood";
             this.dtgvFood.Size = new System.Drawing.Size(577, 262);
             this.dtgvFood.TabIndex = 10;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã món";
+            this.id.Name = "id";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Tên món";
+            this.name.Name = "name";
+            // 
+            // CategoryID
+            // 
+            this.CategoryID.DataPropertyName = "CategoryID";
+            this.CategoryID.HeaderText = "Danh mục";
+            this.CategoryID.Name = "CategoryID";
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "price";
+            dataGridViewCellStyle21.Format = "N0";
+            dataGridViewCellStyle21.NullValue = null;
+            this.price.DefaultCellStyle = dataGridViewCellStyle21;
+            this.price.HeaderText = "Giá";
+            this.price.Name = "price";
             // 
             // panel3
             // 
@@ -385,6 +428,7 @@
             this.btnShowFood.Size = new System.Drawing.Size(93, 27);
             this.btnShowFood.TabIndex = 14;
             this.btnShowFood.Text = "Xem";
+            this.btnShowFood.Click += new System.EventHandler(this.btnShowFood_Click);
             // 
             // btnDeleteFood
             // 
@@ -396,6 +440,7 @@
             this.btnDeleteFood.Size = new System.Drawing.Size(93, 27);
             this.btnDeleteFood.TabIndex = 13;
             this.btnDeleteFood.Text = "Xóa";
+            this.btnDeleteFood.Click += new System.EventHandler(this.btnDeleteFood_Click);
             // 
             // btnEditFood
             // 
@@ -407,6 +452,7 @@
             this.btnEditFood.Size = new System.Drawing.Size(93, 27);
             this.btnEditFood.TabIndex = 12;
             this.btnEditFood.Text = "Sửa";
+            this.btnEditFood.Click += new System.EventHandler(this.btnEditFood_Click);
             // 
             // btnAddFood
             // 
@@ -418,11 +464,17 @@
             this.btnAddFood.Size = new System.Drawing.Size(93, 27);
             this.btnAddFood.TabIndex = 11;
             this.btnAddFood.Text = "Thêm";
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // nmFoodPrice
             // 
             this.nmFoodPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmFoodPrice.Location = new System.Drawing.Point(431, 60);
+            this.nmFoodPrice.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
             this.nmFoodPrice.Name = "nmFoodPrice";
             this.nmFoodPrice.Size = new System.Drawing.Size(146, 26);
             this.nmFoodPrice.TabIndex = 10;
@@ -486,6 +538,7 @@
             this.txtFoodID.ReadOnly = true;
             this.txtFoodID.Size = new System.Drawing.Size(146, 26);
             this.txtFoodID.TabIndex = 1;
+            this.txtFoodID.TextChanged += new System.EventHandler(this.txtFoodID_TextChanged);
             // 
             // label3
             // 
@@ -526,20 +579,37 @@
             // 
             // dtgvCategory
             // 
+            this.dtgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvCategory.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCate,
+            this.nameCate});
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvCategory.DefaultCellStyle = dataGridViewCellStyle23;
             this.dtgvCategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvCategory.Location = new System.Drawing.Point(0, 118);
             this.dtgvCategory.Name = "dtgvCategory";
             this.dtgvCategory.Size = new System.Drawing.Size(577, 347);
             this.dtgvCategory.TabIndex = 11;
+            // 
+            // idCate
+            // 
+            this.idCate.DataPropertyName = "id";
+            this.idCate.FillWeight = 50F;
+            this.idCate.HeaderText = "Mã danh mục";
+            this.idCate.Name = "idCate";
+            // 
+            // nameCate
+            // 
+            this.nameCate.DataPropertyName = "name";
+            this.nameCate.HeaderText = "Tên danh mục";
+            this.nameCate.Name = "nameCate";
             // 
             // panel4
             // 
@@ -566,6 +636,7 @@
             this.btnShowCategory.Size = new System.Drawing.Size(93, 27);
             this.btnShowCategory.TabIndex = 14;
             this.btnShowCategory.Text = "Xem";
+            this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
             // 
             // btnDeleteCategory
             // 
@@ -577,6 +648,7 @@
             this.btnDeleteCategory.Size = new System.Drawing.Size(93, 27);
             this.btnDeleteCategory.TabIndex = 13;
             this.btnDeleteCategory.Text = "Xóa";
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // btnEditCategory
             // 
@@ -588,6 +660,7 @@
             this.btnEditCategory.Size = new System.Drawing.Size(93, 27);
             this.btnEditCategory.TabIndex = 12;
             this.btnEditCategory.Text = "Sửa";
+            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
             // btnAddCategory
             // 
@@ -599,6 +672,7 @@
             this.btnAddCategory.Size = new System.Drawing.Size(93, 27);
             this.btnAddCategory.TabIndex = 11;
             this.btnAddCategory.Text = "Thêm";
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // txtCategoryName
             // 
@@ -647,15 +721,20 @@
             // 
             // dtgvTable
             // 
+            this.dtgvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTable.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idTable,
+            this.nameTable,
+            this.Status});
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTable.DefaultCellStyle = dataGridViewCellStyle19;
             this.dtgvTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvTable.Location = new System.Drawing.Point(1, 118);
             this.dtgvTable.Name = "dtgvTable";
@@ -723,6 +802,7 @@
             this.btnDeleteTable.Size = new System.Drawing.Size(93, 27);
             this.btnDeleteTable.TabIndex = 13;
             this.btnDeleteTable.Text = "Xóa";
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
             // 
             // btnEditTable
             // 
@@ -734,6 +814,7 @@
             this.btnEditTable.Size = new System.Drawing.Size(93, 27);
             this.btnEditTable.TabIndex = 12;
             this.btnEditTable.Text = "Sửa";
+            this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
             // 
             // btnAddTable
             // 
@@ -745,6 +826,7 @@
             this.btnAddTable.Size = new System.Drawing.Size(93, 27);
             this.btnAddTable.TabIndex = 11;
             this.btnAddTable.Text = "Thêm";
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // txtTableName
             // 
@@ -799,19 +881,47 @@
             this.DisplayName,
             this.PassWord,
             this.Type});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvAccount.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvAccount.DefaultCellStyle = dataGridViewCellStyle24;
             this.dtgvAccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvAccount.Location = new System.Drawing.Point(3, 161);
             this.dtgvAccount.Name = "dtgvAccount";
             this.dtgvAccount.Size = new System.Drawing.Size(577, 262);
             this.dtgvAccount.TabIndex = 12;
+            // 
+            // UserName
+            // 
+            this.UserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "Tên đăng nhập";
+            this.UserName.Name = "UserName";
+            // 
+            // DisplayName
+            // 
+            this.DisplayName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DisplayName.DataPropertyName = "DisplayName";
+            this.DisplayName.HeaderText = "Tên hiển thị";
+            this.DisplayName.Name = "DisplayName";
+            // 
+            // PassWord
+            // 
+            this.PassWord.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PassWord.DataPropertyName = "PassWord";
+            this.PassWord.HeaderText = "Mật khẩu";
+            this.PassWord.Name = "PassWord";
+            // 
+            // Type
+            // 
+            this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Type.DataPropertyName = "Type";
+            this.Type.HeaderText = "Loại tài khoản";
+            this.Type.Name = "Type";
             // 
             // panel6
             // 
@@ -946,33 +1056,26 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Tên tài khoản:";
             // 
-            // UserName
+            // idTable
             // 
-            this.UserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "Tên đăng nhập";
-            this.UserName.Name = "UserName";
+            this.idTable.DataPropertyName = "id";
+            this.idTable.FillWeight = 38.07107F;
+            this.idTable.HeaderText = "Mã bàn";
+            this.idTable.Name = "idTable";
             // 
-            // DisplayName
+            // nameTable
             // 
-            this.DisplayName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DisplayName.DataPropertyName = "DisplayName";
-            this.DisplayName.HeaderText = "Tên hiển thị";
-            this.DisplayName.Name = "DisplayName";
+            this.nameTable.DataPropertyName = "name";
+            this.nameTable.FillWeight = 130.9645F;
+            this.nameTable.HeaderText = "Tên bàn";
+            this.nameTable.Name = "nameTable";
             // 
-            // PassWord
+            // Status
             // 
-            this.PassWord.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PassWord.DataPropertyName = "PassWord";
-            this.PassWord.HeaderText = "Mật khẩu";
-            this.PassWord.Name = "PassWord";
-            // 
-            // Type
-            // 
-            this.Type.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Type.DataPropertyName = "Type";
-            this.Type.HeaderText = "Loại tài khoản";
-            this.Type.Name = "Type";
+            this.Status.DataPropertyName = "status";
+            this.Status.FillWeight = 130.9645F;
+            this.Status.HeaderText = "Trạng thái bàn";
+            this.Status.Name = "Status";
             // 
             // fAdmin
             // 
@@ -1085,5 +1188,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DisplayName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PassWord;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameCate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

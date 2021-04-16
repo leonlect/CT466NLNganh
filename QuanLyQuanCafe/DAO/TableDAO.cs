@@ -37,5 +37,26 @@ namespace QuanLyQuanCafe.DAO
 
             return tableList;
         }
+
+        public bool InsertTable(string ten, string trangthai)
+        {
+            string query = "exec InsertTable @name , @status";
+            int resutl = DataProvider.Instance.ExecuteNonQuery(query, new object[] { ten , trangthai });
+            return resutl > 0;
+        }
+        public bool UpdateTable(int id, string ten, string trangthai)
+        {
+            string query = "exec UpdateTable @id , @name , @status";
+            int resutl = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id , ten , trangthai });
+            return resutl > 0;
+        }
+        public bool DeleteTable(int id)
+        {
+            string query = "delete TableFood where id= " + id;
+            int resutl = DataProvider.Instance.ExecuteNonQuery(query);
+            return resutl > 0;
+        }
+
+
     }
 }

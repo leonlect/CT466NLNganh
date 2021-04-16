@@ -137,6 +137,9 @@ GO
 ALTER TABLE Bill
 ALTER COLUMN DateCheckOut DATE NULL
 
+
+
+
 --Thêm Bill
 INSERT Bill(DateCheckIn, DateCheckOut, idTable, status)
 VALUES (GETDATE(), NULL, 1, 0)
@@ -295,14 +298,75 @@ BEGIN
 END
 GO
 
+--9Trigger Delete Bill Info
+create trigger UTG_DeleteBillInfo
+on BillInfo for delete
+as
+begin 
+	declare @idBillInfo int
+	declare @idBill int
+	select @idBillInfo=id, @idBill=deleted.idBill from deleted
+
+	declare @idTable int
+	select @idTable=idTable from Bill where id=@idBill
+
+	declare @count int =0
+	select @count=count(*) from BillInfo as bi, Bill as b where b.id=bi.idBill and b.id=@idBill and b.status=0
+	if(@count=0)
+		update TableFood set status=N'Trống' where id=@idTable
+end
+go
+
+
+create proc InsertCategory
+@name nvarchar(100)
+as
+begin
+insert into FoodCategory(name)
+values(@name);
+end
+go
+
+create proc UpdateFoodCategory
+@id int, @name nvarchar(100)
+as
+begin
+update FoodCategory set name=@name where id=@id
+end
+go
+
+create proc InsertTable
+@name nvarchar(100), @status nvarchar(100)
+as
+begin
+insert into TableFood(name,status)
+values(@name,@status);
+end
+go
+
+create proc UpdateTable
+@id int, @name nvarchar(100), @status nvarchar(100)
+as
+begin
+update TableFood set name=@name, status=@status where id=@id
+end
+go
+
+
 --Them cot giam gia vao Bill
 ALTER TABLE Bill
 ADD discount INT DEFAULT 0
 
+update Bill set disCount=0 WHERE discount IS NULL
+go
+
+
 SELECT * FROM Account
 SELECT * FROM Bill
-SELECT * FROM BillInfo
+	SELECT * FROM BillInfo
 SELECT * FROM Food
 SELECT * FROM FoodCategory
 
-
+SELECT a.id, a.name, b.name, a.price
+FROM Food AS a, FoodCategory as b
+WHERE a.idCategory = b.id

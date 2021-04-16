@@ -63,6 +63,7 @@
             this.cbFood = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.cbCategory = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.menuStrip1.SuspendLayout();
             this.panel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -204,6 +205,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnRefresh);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.txtTotalPrice);
             this.panel3.Controls.Add(this.simpleButton2);
@@ -402,6 +404,16 @@
             this.flpTable.Size = new System.Drawing.Size(731, 740);
             this.flpTable.TabIndex = 5;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(341, 15);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(133, 35);
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,5 +478,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Label label4;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTotalPrice;
+        private DevExpress.XtraEditors.SimpleButton btnRefresh;
     }
 }
