@@ -21,7 +21,10 @@ namespace QuanLyQuanCafe.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = "Server=DESKTOP-E5AILH0\\SQLEXPRESS; Database = QuanLyQuanCafe; uid=sa;pwd=sa";
+
+        private string connectionSTR = "Data Source=.\\SQLEXPRESS;  Initial Catalog=QuanLyQuanCafe; Integrated Security=True";
+
+      //  private string connectionSTR = "Server=DESKTOP-E5AILH0\\SQLEXPRESS; Database = QuanLyQuanCafe; uid=sa;pwd=sa";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
