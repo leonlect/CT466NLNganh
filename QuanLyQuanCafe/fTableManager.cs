@@ -12,6 +12,10 @@ using QuanLyQuanCafe.DAO;
 using QuanLyQuanCafe.DTO;
 using Menu = QuanLyQuanCafe.DTO.Menu;
 using DevComponents.DotNetBar.Controls;
+using System.Globalization;
+using System.Threading;
+using System.Threading.Tasks;
+
 
 namespace QuanLyQuanCafe
 {
@@ -21,11 +25,11 @@ namespace QuanLyQuanCafe
         {
             InitializeComponent();
 
-   
-
             LoadTable(); //Load dữ liệu bàn
 
             LoadCategory(); //Load lên
+
+            LoadComboboxTable(cboSwitchTable); //Load lên tất cả bàn cho combobox chuyển bàn
 
         }
 
@@ -76,6 +80,12 @@ namespace QuanLyQuanCafe
             }
         }
 
+        void LoadComboboxTable(ComboBoxEx cb) //Load dữ liệu lên combobox bàn để chuyển
+        {
+            cb.DataSource = TableDAO.Instance.LoadTableList();
+            cb.DisplayMember = "Name";
+        }
+
         void ShowBill(int id) //Hiển thị chi tiết hóa đơn cho từng bàn được chọn
         {
             lsvBill.Items.Clear();
@@ -92,7 +102,14 @@ namespace QuanLyQuanCafe
                 totalPrice += item.TotalPrice;
                 lsvBill.Items.Add(lsvItem);
             }
+            CultureInfo curtual = new CultureInfo("vi");
+            Thread.CurrentThread.CurrentCulture = curtual;
+         //   txtTotalPrice.Text = totalPrice.ToString("c");
             txtTotalPrice.Text = totalPrice.ToString("#,##");
+            txtSelectTable.Text = (lsvBill.Tag as Table).Name;
+            LoadTable();
+
+
         }
 
         #endregion
@@ -214,29 +231,40 @@ namespace QuanLyQuanCafe
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             //Lấy ra khuyến mãi
             int discount = (int)nmDiscount.Value;
-            float totalPrice = float.Parse(txtTotalPrice.Text);
-            float finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
+            txtSelectTable.Text = (lsvBill.Tag as Table).Name;
+            double totalPrice = Convert.ToDouble(txtTotalPrice.Text.Split(',')[0]);
+            double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
 
             if (idBill != -1)
             {
                     if (MessageBox.Show(string.Format("Bạn có muốn thanh toán hóa đơn cho bàn {0}\n Tổng tiền - (Tổng tiền/100)*Giảm giá =  {1} - ({1} / 100) * {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        BillDAO.Instance.CheckOut(idBill, discount);
+                        BillDAO.Instance.CheckOut(idBill, discount, (float)finalTotalPrice);
                         ShowBill(table.ID);
                         LoadTable();
                     }
                 }
             }
-
-            #endregion
+          }
+          #endregion
       
         
-        
-        }
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadTable();
+        }
+
+        private void btnSwitchTable_Click(object sender, EventArgs e)
+        {
+            
+            int id1 = (lsvBill.Tag as Table).ID;
+            int id2 = (cboSwitchTable.SelectedItem as Table).ID;
+            if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} qua bàn {1} không ?", (lsvBill.Tag as Table).Name, (cboSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel )== DialogResult.OK)
+            { 
+                TableDAO.Instance.SwitchTable(id1, id2);
+                LoadTable(); 
+            }
+
         }
     }
 }

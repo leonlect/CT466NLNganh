@@ -22,13 +22,6 @@ namespace QuanLyQuanCafe.DAO
 
         private BillDAO() { }
 
-        /// <summary>
-        /// Thành công: bill ID
-        /// thất bại: - 1
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-
         public int GetUncheckBillIDByTableID (int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Bill WHERE idTable = " + id + " AND status = 0");
@@ -62,9 +55,9 @@ namespace QuanLyQuanCafe.DAO
 
         }
 
-       public void CheckOut(int id, int discount) //Lấy ra Bill checkout cho 1 bill bằng cách truyền vào ID và giá trị discount
+       public void CheckOut(int id, int discount, float totalPrice) //Lấy ra Bill checkout cho 1 bill bằng cách truyền vào ID và giá trị discount
         {
-            string query = "UPDATE Bill SET DateCheckOut=GETDATE(), status = 1, " +  "discount = " + discount + " WHERE id = " + id;
+            string query = "UPDATE Bill SET DateCheckOut=GETDATE(), status = 1, " +  "discount = " + discount + ", totalPrice=" + totalPrice + " WHERE id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 

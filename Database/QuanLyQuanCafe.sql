@@ -135,10 +135,11 @@ CREATE TABLE Bill
 GO
 
 ALTER TABLE Bill
+ADD  totalPrice FLOAT DEFAULT 0
+GO
+
+ALTER TABLE Bill
 ALTER COLUMN DateCheckOut DATE NULL
-
-
-
 
 --Thêm Bill
 INSERT Bill(DateCheckIn, DateCheckOut, idTable, status)
@@ -156,7 +157,6 @@ CREATE TABLE BillInfo --BillInfo
 	idBill INT NOT NULL,
 	idFood INT NOT NULL,
 	count INT NOT NULL DEFAULT 0 --count
-
 	FOREIGN KEY (idBill) REFERENCES Bill(id),
 	FOREIGN KEY (idFood) REFERENCES Food(id)
 )
@@ -262,7 +262,7 @@ END
 GO
 
 --7 Trigger Update cho BillInfo
-CREATE TRIGGER UTG_UpdateBillInfo
+CREATE TRIGGER UTG_UpdateBillInfo --DONE
 ON BillInfo FOR INSERT, UPDATE
 AS
 BEGIN
@@ -282,7 +282,7 @@ END
 GO
 
 --8 Trigger Update cho Bill
-CREATE TRIGGER UpdateBill
+CREATE TRIGGER UpdateBill --DONE
 ON Bill for UPDATE
 AS
 BEGIN
@@ -298,8 +298,8 @@ BEGIN
 END
 GO
 
---9Trigger Delete Bill Info
-create trigger UTG_DeleteBillInfo
+--9 Trigger Delete Bill Info
+create trigger UTG_DeleteBillInfo --DONE
 on BillInfo for delete
 as
 begin 
@@ -353,6 +353,63 @@ end
 go
 
 
+--14 Proc chuyển bàn
+
+CREATE PROC SwitchTable
+@idTable1 int, @idTable2 int
+as
+begin
+	declare @idFirstBill int
+	declare @idSecondBill int
+
+	declare @isFirstTableEmpty int =1
+	declare @isSecondTableEmpty int =1
+
+	select @idFirstBill=id from Bill where idTable=@idTable1 and status=0
+	select @idSecondBill=id from Bill where idTable=@idTable2 and status=0
+	if(@idSecondBill is null)
+		begin
+			insert into Bill(DateCheckIn,DateCheckOut,idTable,status)
+			values(GETDATE(),null,@idTable2,0);
+			select @idSecondBill=MAX(id) from Bill where idTable=@idTable2 and status=0
+		end
+
+	select @isSecondTableEmpty=count(*) from BillInfo where idBill=@idSecondBill
+
+	if(@idFirstBill is null)
+		begin
+			insert into Bill(DateCheckIn,DateCheckOut,idTable,status)
+			values(GETDATE(),null,@idTable1,0);
+			select @idFirstBill=MAX(id) from Bill where idTable=@idTable1 and status=0
+		end
+	
+	select @isFirstTableEmpty=count(*) from BillInfo where idBill=@idFirstBill 
+	
+
+	select id into IDBillInfoTable from BillInfo where idBill=@idSecondBill
+	update BillInfo set idBill=@idSecondBill where idBill=@idFirstBill
+	update BillInfo set idBill=@idFirstBill where id in(select * from IDBillInfoTable)
+	drop table IDBillInfoTable
+	if(@isFirstTableEmpty=0)
+		update TableFood set status=N'Trống' where id=@idTable2
+	if(@isSecondTableEmpty=0)
+		update TableFood set status=N'Trống' where id=@idTable1
+end
+go
+
+--15 PProc lấy ra danh sách hóa đơn từ ngày đến ngày
+CREATE PROC GetListBillByDate
+@dateCheckIn DATE, @dateCheckOut DATE
+AS
+BEGIN
+	SELECT f.name AS[Tên bàn], ,b.DateCheckIn AS[Ngày vào],b.DateCheckOut AS[Ngày ra],b.disCount AS[Giảm giá], b.totalPrice AS[Tổng tiền]
+	FROM Bill AS b, TableFood AS f
+	WHERE b.DateCheckIn >=@dateCheckIn and b.DateCheckOut<=@dateCheckOut and b.status=1 and f.id=b.idTable
+END
+GO
+
+drop proc GetListBillByDate
+
 --Them cot giam gia vao Bill
 ALTER TABLE Bill
 ADD discount INT DEFAULT 0
@@ -363,10 +420,10 @@ go
 
 SELECT * FROM Account
 SELECT * FROM Bill
-	SELECT * FROM BillInfo
+SELECT * FROM BillInfo
 SELECT * FROM Food
 SELECT * FROM FoodCategory
 
-SELECT a.id, a.name, b.name, a.price
-FROM Food AS a, FoodCategory as b
-WHERE a.idCategory = b.id
+
+delete from Bill
+delete from BillInfo
