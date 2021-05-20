@@ -35,6 +35,11 @@ namespace QuanLyQuanCafe.DAO
             return -1;
         }
 
+        public DataTable GetListBillByDate(DateTime checkIn, DateTime checkOut)
+        {
+            return DataProvider.Instance.ExecuteQuery("EXEC GetListBillByDate @checkIn , @checkOut", new object[] { checkIn , checkOut });
+        }
+
         public void InsertBill(int id)
         {
             DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertBill @idTable", new object[]{id});

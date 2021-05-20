@@ -399,16 +399,18 @@ go
 
 --15 PProc lấy ra danh sách hóa đơn từ ngày đến ngày
 CREATE PROC GetListBillByDate
-@dateCheckIn DATE, @dateCheckOut DATE
+@checkIn DATE, @checkOut DATE
 AS
 BEGIN
-	SELECT f.name AS[Tên bàn], ,b.DateCheckIn AS[Ngày vào],b.DateCheckOut AS[Ngày ra],b.disCount AS[Giảm giá], b.totalPrice AS[Tổng tiền]
+	SELECT f.name AS[Tên bàn], b.DateCheckIn AS[Ngày vào],b.DateCheckOut AS[Ngày ra],b.disCount AS[Giảm giá], b.totalPrice AS[Tổng tiền]
 	FROM Bill AS b, TableFood AS f
-	WHERE b.DateCheckIn >=@dateCheckIn and b.DateCheckOut<=@dateCheckOut and b.status=1 and f.id=b.idTable
+	WHERE b.DateCheckIn >=@checkIn and b.DateCheckOut<=@checkOut and b.status=1 and f.id=b.idTable
 END
 GO
 
-drop proc GetListBillByDate
+DROP PROC GetListBillByDate
+
+EXEC GetListBillByDate '20210520','20210520'
 
 --Them cot giam gia vao Bill
 ALTER TABLE Bill

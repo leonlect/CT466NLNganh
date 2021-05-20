@@ -1,5 +1,5 @@
 - Sửa bug chưa update DateCheckOut vào Bill - Đã sửa;
-- 
+- ĐANG LÀM - Bài 15 thay đổi thông tin cá nhân
 
 
 

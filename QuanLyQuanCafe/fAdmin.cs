@@ -23,7 +23,6 @@ namespace QuanLyQuanCafe
         BindingSource categoryList = new BindingSource();
         BindingSource Tablelist = new BindingSource();
 
-
         public fAdmin()
         {
             InitializeComponent();
@@ -32,12 +31,14 @@ namespace QuanLyQuanCafe
 
         #region Method
 
-        void Load()
+        void Load() //Load toàn bộ các phương thức viết bên dưới khi form admin mở lên.
         {
             dtgvFood.DataSource = foodList;
             dtgvCategory.DataSource = categoryList;
             dtgvTable.DataSource = Tablelist;
-
+            dtpkFromDate.Value = DateTime.Now;
+            dtpkToDate.Value = DateTime.Now;
+            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadAccountList();
             LoadListFood();
             LoadCategoryList();
@@ -46,6 +47,13 @@ namespace QuanLyQuanCafe
             AddCategoryFoodBinding();
             AddTableBinding();
             LoadCategoryIntoCombobox(cbCategory);
+            //Set giá trị mặc định cho 2 datetimepicker ngày hiện tại
+
+        }
+
+        void LoadListBillByDate(DateTime checkIn, DateTime checkOut) //Nạp lên danh sách hóa đơn theo ngày
+        {
+            dtgvBill.DataSource = BillDAO.Instance.GetListBillByDate(checkIn, checkOut);
         }
 
         void LoadCategoryList() //Nạp lên danh mục món
@@ -53,25 +61,12 @@ namespace QuanLyQuanCafe
             categoryList.DataSource = CategoryDAO.Instance.GetListCategory();
         }
 
-        void LoadListTable()
+        void LoadListTable() //Nạp lên danh sách bàn ăn
         {
             Tablelist.DataSource = TableDAO.Instance.LoadTableList();
         }
 
-        void AddTableBinding()
-        {
-            txtTableID.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "id"));
-            txtTableName.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "name"));
-            cbTableStatus.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "status"));
-        }
-
-        void AddCategoryFoodBinding()
-        {
-            txtCategoryID.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "id", true, DataSourceUpdateMode.Never));
-            txtCategoryName.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "name", true, DataSourceUpdateMode.Never));
-        }
-
-        void LoadAccountList()
+        void LoadAccountList() //Nạp lên danh sách tài khoản
         {
             string query = "EXEC USP_GetAccountByUserName @username"; //Khi viet query đa nhiều tham số phai co khoang cach o giua dau , vd @staff , @admin
             // Gọi DataProvider.Instance để tạo kết nối và truy vấn. Ko cần tạo mới đối tượng DataProvider
@@ -83,21 +78,35 @@ namespace QuanLyQuanCafe
             foodList.DataSource = FoodDAO.Instance.GetListFood();
         }
 
-        void AddFoodBinding()
+        void LoadCategoryIntoCombobox(ComboBoxEx cb) //Nạp lên combobox danh mục thức ăn
+        {
+            cb.DataSource = CategoryDAO.Instance.GetListCategory();
+            cb.DisplayMember = "name";
+        }
+
+        void AddTableBinding() //Binding các thông tin bàn ăn từ datagridview lên các textbox
+        {
+            txtTableID.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "id"));
+            txtTableName.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "name"));
+            cbTableStatus.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "status"));
+        }
+
+        void AddCategoryFoodBinding() //Binding các thông tin loại thức ăn từ datagridview lên các textbox
+        {
+            txtCategoryID.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "id", true, DataSourceUpdateMode.Never));
+            txtCategoryName.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "name", true, DataSourceUpdateMode.Never));
+        }
+      
+        void AddFoodBinding() //Binding các thông tin thức ăn từ datagridview lên các textbox
         {
             txtFoodID.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "id", true, DataSourceUpdateMode.Never));
             txtFoodName.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "name", true, DataSourceUpdateMode.Never));
             nmFoodPrice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "price", true, DataSourceUpdateMode.Never));
         }
 
-        void LoadCategoryIntoCombobox(ComboBoxEx cb)
-        {
-            cb.DataSource = CategoryDAO.Instance.GetListCategory();
-            cb.DisplayMember = "name";
-        }
+        
 
         #endregion
-
 
         #region Events
 
@@ -264,16 +273,10 @@ namespace QuanLyQuanCafe
             }
         }
 
-
         private void btnShowCategory_Click(object sender, EventArgs e) //Show danh muc mon
         {
             LoadCategoryList();
         }
-
-
-
-
-        #endregion
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
@@ -394,5 +397,12 @@ namespace QuanLyQuanCafe
                 MessageBox.Show("Xóa thất bại");
             }
         }
+       
+        private void btnViewbill_Click(object sender, EventArgs e)
+        {
+            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+        }
+        #endregion
+
     }
 }
