@@ -28,7 +28,7 @@ namespace QuanLyQuanCafe.DAO
             return result.Rows.Count > 0;
         }
 
-        public bool UpdateAccount(string userName, string displayName, string pass, string newPass)
+        public bool UpdateAccountInfo(string userName, string displayName, string pass, string newPass)
         {
             int result = DataProvider.Instance.ExecuteNonQuery("EXEC USP_UpdateAccount @userName , @displayName , @password , @newPassword", new object[] { userName, displayName, pass, newPass });
             return result > 0; 
@@ -43,6 +43,45 @@ namespace QuanLyQuanCafe.DAO
                 return new Account(item);
             }
             return null;
+        }
+
+        public DataTable GetListAccount()
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT UserName, DisplayName, Type FROM Account");
+        }
+
+        public bool InsertAccount(string name, string displayName, int type)
+        {
+
+            string query = string.Format("INSERT Account( UserName , DisplayName, Type) VALUES (N'{0}', N'{1}', {2})", name, displayName, type);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateAccountAdmin(string name, string displayName, int type)
+        {
+
+            string query = string.Format("UPDATE Account SET DisplayName = N'{1}', Type = {2} WHERE UserName = N'{0}'", name, displayName, type);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+            
+        public bool DeleteAccount(string name)
+        {
+            string query = string.Format("DELETE Account WHERE UserName = N'{0}'", name);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool ResetPassword(string name)
+        {
+            string query = string.Format("UPDATE Account SET PassWord = N'0' WHERE UserName = N'{0}'", name);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
         }
 
     }

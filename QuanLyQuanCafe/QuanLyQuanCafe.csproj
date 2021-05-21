@@ -94,6 +94,12 @@
     <Compile Include="fInformation.Designer.cs">
       <DependentUpon>fInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="fListFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fListFood.Designer.cs">
+      <DependentUpon>fListFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="fLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fInformation.resx">
       <DependentUpon>fInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fListFood.resx">
+      <DependentUpon>fListFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>

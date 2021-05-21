@@ -5,6 +5,12 @@
 DTO: Lớp Model
 DAO: Lớp giao tiếp CSDL
 
+BindingSource foodList = new BindingSource();
+dtgvFood.DataSource = foodList;
+        void LoadListFood() //Nạp lên danh sách thức ăn.
+        {
+            foodList.DataSource = FoodDAO.Instance.GetListFood();
+        }
 
 
 

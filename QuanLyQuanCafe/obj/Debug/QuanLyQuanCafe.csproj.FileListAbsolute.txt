@@ -96,3 +96,4 @@ D:\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\de\DevExpress.Office.v19.2.Core.resou
 D:\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\es\DevExpress.Office.v19.2.Core.resources.dll
 D:\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\ja\DevExpress.Office.v19.2.Core.resources.dll
 D:\QuanLyQuanCafe\QuanLyQuanCafe\bin\Debug\ru\DevExpress.Office.v19.2.Core.resources.dll
+D:\QuanLyQuanCafe\QuanLyQuanCafe\obj\Debug\QuanLyQuanCafe.fListFood.resources

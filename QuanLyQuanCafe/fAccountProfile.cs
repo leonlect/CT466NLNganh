@@ -35,7 +35,7 @@ namespace QuanLyQuanCafe
             txtDisplayName.Text = LoginAccount.DisplayName;
         }
 
-        void UpdateAccount() //Cập nhật thông tin tài khoản
+        void UpdateAccountInfo() //Cập nhật thông tin tài khoản
         {
             string displayName = txtDisplayName.Text;
             string passWord = txtPassWord.Text;
@@ -47,14 +47,36 @@ namespace QuanLyQuanCafe
             }
             else
             {
-                if(AccountDAO.Instance.UpdateAccount(userName, displayName, passWord, newPass))
+                if(AccountDAO.Instance.UpdateAccountInfo(userName, displayName, passWord, newPass))
                 {
                     MessageBox.Show("Cập nhật thành công !","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if(updateAccount != null)
+                    {
+                        updateAccount(this, new AccountEvent(AccountDAO.Instance.GetAccountByUserName(userName)));
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Vui lòng điền đúng mật khẩu !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+        }
+
+        private event EventHandler<AccountEvent> updateAccount;
+        public event EventHandler<AccountEvent> UpdateAccount
+        {
+            add { updateAccount += value; }
+            remove { updateAccount -= value; }
+        }
+
+        public class AccountEvent:EventArgs
+        {
+            private Account acc;
+            public Account Acc { get => acc; set => acc = value; }
+
+            public AccountEvent(Account acc)
+            {
+                this.Acc = acc;
             }
         }
 
@@ -65,7 +87,8 @@ namespace QuanLyQuanCafe
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateAccount();
+            UpdateAccountInfo();
         }
+
     }
 }

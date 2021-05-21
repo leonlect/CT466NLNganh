@@ -15,7 +15,7 @@ using DevComponents.DotNetBar.Controls;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
-
+using static QuanLyQuanCafe.fAccountProfile;
 
 namespace QuanLyQuanCafe
 {
@@ -50,12 +50,7 @@ namespace QuanLyQuanCafe
         void ChangeAccount(int type) //Kiểm tra loại tài khoản
         {
             adminToolStripMenuItem.Enabled = type == 1;
-            if(loginAccount.Type == 1) {
-                tàiKhoảnToolStripMenuItem.Text += " (" + loginAccount.DisplayName + " - Admin)";
-            } else
-            {
-                tàiKhoảnToolStripMenuItem.Text += " (" + loginAccount.DisplayName + " - Nhân viên)";
-            }  
+            tàiKhoảnToolStripMenuItem.Text += " (" + loginAccount.DisplayName + ")";
         }
 
         void LoadCategory() //Nạp lên combobox danh mục món ID.
@@ -154,7 +149,13 @@ namespace QuanLyQuanCafe
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAccountProfile f = new fAccountProfile(loginAccount);
+            f.UpdateAccount += F_UpdateAccount;
             f.ShowDialog();
+        }
+
+        private void F_UpdateAccount(object sender, AccountEvent e)
+        {
+            tàiKhoảnToolStripMenuItem.Text = "Tài khoản (" + e.Acc.DisplayName + ")";
         }
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,10 +167,23 @@ namespace QuanLyQuanCafe
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAdmin f = new fAdmin();
+            f.loginAccount = loginAccount;
             f.InsertFood += f_InsertFood;
             f.UpdateFood += f_UpdateFood;
             f.DeleteFood += f_DeleteFood;
+            f.InsertTable += F_InsertTable;
+            f.DeleteTable += F_DeleteTable;
             f.ShowDialog();
+        }
+
+        private void F_DeleteTable(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
+
+        private void F_InsertTable(object sender, EventArgs e)
+        {
+            LoadTable();
         }
 
         void f_InsertFood(object senders, EventArgs e)
@@ -291,11 +305,14 @@ namespace QuanLyQuanCafe
             }
 
         }
+
+        private void danhMụcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fListFood f = new fListFood();
+            f.ShowDialog();
+        }
+
         #endregion
-
-
-
-
 
     }
 }

@@ -18,8 +18,8 @@ namespace QuanLyQuanCafe.DAO
             private set { instance = value; }
         }
 
-        public static int TableWidth = 120;
-        public static int TableHeight = 120;
+        public static int TableWidth = 100;
+        public static int TableHeight = 100;
 
         private TableDAO() { }
 

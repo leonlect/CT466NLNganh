@@ -22,7 +22,8 @@ namespace QuanLyQuanCafe
         BindingSource foodList = new BindingSource();
         BindingSource categoryList = new BindingSource();
         BindingSource Tablelist = new BindingSource();
-
+        BindingSource AccountList = new BindingSource();
+        public Account loginAccount;
         public fAdmin()
         {
             InitializeComponent();
@@ -36,10 +37,11 @@ namespace QuanLyQuanCafe
             dtgvFood.DataSource = foodList;
             dtgvCategory.DataSource = categoryList;
             dtgvTable.DataSource = Tablelist;
-
+            dtgvAccount.DataSource = AccountList;
+            
             LoadDateTimePickerBill();
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
-            LoadAccountList();
+            LoadAccount();
             LoadListFood();
             LoadCategoryList();
             LoadListTable();
@@ -47,6 +49,7 @@ namespace QuanLyQuanCafe
             AddFoodBinding();
             AddCategoryFoodBinding();
             AddTableBinding();
+            AddAccountBinding();
             LoadCategoryIntoCombobox(cbCategory);
         }
 
@@ -65,17 +68,15 @@ namespace QuanLyQuanCafe
             Tablelist.DataSource = TableDAO.Instance.LoadTableList();
         }
 
-        void LoadAccountList() //Nạp lên danh sách tài khoản
-        {
-            string query = "EXEC USP_GetAccountByUserName @username"; //Khi viet query đa nhiều tham số phai co khoang cach o giua dau , vd @staff , @admin
-            // Gọi DataProvider.Instance để tạo kết nối và truy vấn. Ko cần tạo mới đối tượng DataProvider
-            dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query, new object[] { "staff" });
-        }
-
         void LoadListFood() //Nạp lên danh sách thức ăn.
         {
             foodList.DataSource = FoodDAO.Instance.GetListFood();
         }
+
+        void LoadAccount()
+        {
+            AccountList.DataSource = AccountDAO.Instance.GetListAccount();
+        } //Nạp lên danh sách tài khoản
 
         void LoadCategoryIntoCombobox(ComboBoxEx cb) //Nạp lên combobox danh mục thức ăn
         {
@@ -109,11 +110,26 @@ namespace QuanLyQuanCafe
             txtFoodName.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "name", true, DataSourceUpdateMode.Never));
             nmFoodPrice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "price", true, DataSourceUpdateMode.Never));
         }
+       
+        void AddAccountBinding()
+        {
+            txtUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "UserName", true, DataSourceUpdateMode.Never));
+            txtDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
+            numType.DataBindings.Add(new Binding("Value", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
+        }
+
+        List<Food> SearchFoodByName(string name) //Method Tìm kiếm thức ăn
+        {
+            List<Food> listFood = FoodDAO.Instance.SearchFoodByName(name);
+
+            return listFood;
+        }
 
         #endregion
 
         #region Events
 
+        #region EventHandler
         private event EventHandler insertFood;
         public event EventHandler InsertFood
         {
@@ -176,6 +192,7 @@ namespace QuanLyQuanCafe
             add { deleteTable += value; }
             remove { deleteTable -= value; }
         }
+        #endregion
 
         private void btnShowFood_Click(object sender, EventArgs e)
         {
@@ -184,33 +201,33 @@ namespace QuanLyQuanCafe
 
         private void txtFoodID_TextChanged(object sender, EventArgs e)
         {
-            if (dtgvFood.SelectedCells.Count > 0)
-            {
-                //Chọn lên 1 ô bất kỳ. Lấy ra tất cả ô của dòng này. Lấy ra cột có tên idCategory.
-                int id = (int)dtgvFood.SelectedCells[0].OwningRow.Cells["CategoryID"].Value;
-
-                Category category = CategoryDAO.Instance.GetCategoryByID(id);
-
-                cbCategory.SelectedItem = category;
-
-                int index = -1;
-
-                int i = 0;
-
-                foreach (Category item in cbCategory.Items)
+            try {
+                if (dtgvFood.SelectedCells.Count > 0)
                 {
-                    if (item.ID == category.ID)
+
+                    //Chọn lên 1 ô bất kỳ. Lấy ra tất cả ô của dòng này. Lấy ra cột có tên idCategory.
+                    int id = (int)dtgvFood.SelectedCells[0].OwningRow.Cells["CategoryID"].Value;
+
+                    Category category = CategoryDAO.Instance.GetCategoryByID(id);
+
+                    cbCategory.SelectedItem = category;
+
+                    int index = -1;
+
+                    int i = 0;
+
+                    foreach (Category item in cbCategory.Items)
                     {
-                        index = i;
-                        break;
+                        if (item.ID == category.ID)
+                        {
+                            index = i;
+                            break;
+                        }
+                        i++;
                     }
-                    i++;
+                    cbCategory.SelectedIndex = index;
                 }
-
-                cbCategory.SelectedIndex = index;
-            }
-
-
+            } catch { }
         }
 
         private void btnAddFood_Click(object sender, EventArgs e) //Xử lý sự kiện nút thêm
@@ -406,7 +423,111 @@ namespace QuanLyQuanCafe
         {
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
         }
+
+        private void btnSearchFoodName_Click(object sender, EventArgs e) //Sự kiện nhấn nút tìm kiếm thức ăn
+        {
+            foodList.DataSource = SearchFoodByName(txtSearchFoodName.Text);
+        }
+
         #endregion
 
+        void AddAccount(string userName, string displayName, int type)
+        {
+            try
+            {
+                if (AccountDAO.Instance.InsertAccount(userName, displayName, type))
+                {
+                    MessageBox.Show("Thêm tài khoản thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm tài khoản thất bại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                LoadAccount();
+            }
+            catch
+            {
+                MessageBox.Show("Tên tài khoản không được giống nhau hoặc để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            string userName = txtUserName.Text;
+            string displayName = txtDisplayName.Text;
+            int type = (int)numType.Value;
+            if (userName.Equals("") || displayName.Equals(""))
+            {
+                MessageBox.Show("Các trường không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUserName.Focus();
+                return;
+            }
+            AddAccount(userName, displayName, type);
+        }
+
+        void EditAccount(string userName, string displayName, int type)
+        {
+            if (AccountDAO.Instance.UpdateAccountAdmin(userName, displayName, type))
+            {
+                MessageBox.Show("Cập nhật tài khoản thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật tài khoản thất bại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            LoadAccount();
+        }
+
+        private void btnEditAccount_Click(object sender, EventArgs e)
+        {
+            string userName = txtUserName.Text;
+            string displayName = txtDisplayName.Text;
+            int type = (int)numType.Value;
+            EditAccount(userName, displayName, type);
+        }
+
+        void DeleteAccount(string userName)
+        {
+            if(loginAccount.UserName.Equals(userName))
+            {
+                MessageBox.Show("Tài khoản admin này đang đăng nhập, không thể xóa !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (AccountDAO.Instance.DeleteAccount(userName))
+            {
+                MessageBox.Show("Xóa tài khoản thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Xóa tài khoản thất bại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            LoadAccount();
+        }
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            string userName = txtUserName.Text;
+            DeleteAccount(userName);
+        }
+
+        private void btnShowAccount_Click(object sender, EventArgs e)
+        {
+            LoadAccount();
+        }
+        void ResetPass(string userName)
+        {
+            if (AccountDAO.Instance.ResetPassword(userName))
+            {
+                MessageBox.Show("Đặt lại mật khẩu mặc định thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Đặt lại mật khẩu thất bại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            string userName = txtUserName.Text;
+            ResetPass(userName);
+        }
     }
 }

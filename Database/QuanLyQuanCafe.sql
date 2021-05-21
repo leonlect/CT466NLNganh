@@ -24,7 +24,7 @@ CREATE TABLE Account
 (
 	UserName NVARCHAR(100) PRIMARY KEY,
 	DisplayName NVARCHAR(100) NOT NULL DEFAULT N'Default',
-	PassWord NVARCHAR(1000) NOT NULL, --PassWord
+	PassWord NVARCHAR(1000) NOT NULL DEFAULT 0, --PassWord
 	Type INT NOT NULL DEFAULT 0	--Type 1 admin 0 staff
 )
 GO
@@ -440,10 +440,12 @@ BEGIN
 			UPDATE Account SET DisplayName = @displayName WHERE UserName = @userName
 		END
 		ELSE
-			UPDATE Account SET DisplayName = @displayName, PassWord = @password WHERE UserName = @userName
+			UPDATE Account SET DisplayName = @displayName, PassWord = @newPassword WHERE UserName = @userName
 	END
 END
 GO
+
+DROP PROC USP_UpdateAccount
 
 
 --Them cot giam gia vao Bill
@@ -462,6 +464,9 @@ SELECT * FROM BillInfo
 SELECT * FROM Food
 SELECT * FROM FoodCategory
 
+SELECT B.name AS [Tên danh mục],A.name AS [Tên món], A.price AS [Giá]
+FROM Food AS A, FoodCategory AS B
+WHERE A.idCategory = B.id
 
-delete from Bill
-delete from BillInfo
+INSERT INTO Account(UserName, DisplayName,PassWord , Type)
+VALUES ('nv2', N'NV2', '12345' ,0)

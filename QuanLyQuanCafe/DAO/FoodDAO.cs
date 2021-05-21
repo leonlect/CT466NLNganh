@@ -41,9 +41,28 @@ namespace QuanLyQuanCafe.DAO
         {
             List<Food> list = new List<Food>();
 
-           // string query = "SELECT a.id, a.name, b.name, a.price FROM Food AS a, FoodCategory as b WHERE a.idCategory = b.id";
-            
-           string query = "SELECT * FROM Food";
+            // string query = "SELECT a.id, a.name, b.name, a.price FROM Food AS a, FoodCategory as b WHERE a.idCategory = b.id";
+
+            string query = "SELECT * FROM Food";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Food food = new Food(item);
+                list.Add(food);
+            }
+
+            return list;
+        }
+
+        public List<Food> SearchFoodByName(string name)
+        {
+            List<Food> list = new List<Food>();
+
+            // string query = "SELECT a.id, a.name, b.name, a.price FROM Food AS a, FoodCategory as b WHERE a.idCategory = b.id";
+
+            string query = string.Format("SELECT * FROM Food WHERE name like N'%{0}%'", name);
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -65,7 +84,6 @@ namespace QuanLyQuanCafe.DAO
             return result > 0;
         }
 
-
         public bool UpdateFood(int idFood, string name, int id, float price) //Sua thuc an
         {
 
@@ -83,6 +101,8 @@ namespace QuanLyQuanCafe.DAO
 
             return result > 0;
         }
+
+
 
     }
 }
