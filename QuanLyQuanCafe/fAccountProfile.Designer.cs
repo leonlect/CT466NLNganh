@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassWord = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtTaiKhoan = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtUserName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1.SuspendLayout();
@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtPassWord);
-            this.groupBox1.Controls.Add(this.txtTaiKhoan);
+            this.groupBox1.Controls.Add(this.txtUserName);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -169,19 +169,19 @@
             this.txtPassWord.Size = new System.Drawing.Size(295, 29);
             this.txtPassWord.TabIndex = 7;
             // 
-            // txtTaiKhoan
+            // txtUserName
             // 
             // 
             // 
             // 
-            this.txtTaiKhoan.Border.Class = "TextBoxBorder";
-            this.txtTaiKhoan.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtTaiKhoan.Enabled = false;
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(183, 38);
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(295, 29);
-            this.txtTaiKhoan.TabIndex = 5;
+            this.txtUserName.Border.Class = "TextBoxBorder";
+            this.txtUserName.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtUserName.Enabled = false;
+            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(183, 38);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(295, 29);
+            this.txtUserName.TabIndex = 5;
             // 
             // btnUpdate
             // 
@@ -192,6 +192,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(75, 34);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
@@ -234,7 +235,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private DevComponents.DotNetBar.Controls.TextBoxX txtPassWord;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTaiKhoan;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtUserName;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.SimpleButton btnExit;
     }

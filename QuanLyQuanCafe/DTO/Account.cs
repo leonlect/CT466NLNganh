@@ -9,7 +9,7 @@ namespace QuanLyQuanCafe.DTO
 {
     public class Account
     {
-        public Account(string userName, string displayName,int type, string password)
+        public Account(string userName, string displayName,int type, string password = null)
         {
             this.UserName = userName;
             this.DisplayName = displayName;

@@ -36,19 +36,18 @@ namespace QuanLyQuanCafe
             dtgvFood.DataSource = foodList;
             dtgvCategory.DataSource = categoryList;
             dtgvTable.DataSource = Tablelist;
-            dtpkFromDate.Value = DateTime.Now;
-            dtpkToDate.Value = DateTime.Now;
+
+            LoadDateTimePickerBill();
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadAccountList();
             LoadListFood();
             LoadCategoryList();
             LoadListTable();
+
             AddFoodBinding();
             AddCategoryFoodBinding();
             AddTableBinding();
             LoadCategoryIntoCombobox(cbCategory);
-            //Set giá trị mặc định cho 2 datetimepicker ngày hiện tại
-
         }
 
         void LoadListBillByDate(DateTime checkIn, DateTime checkOut) //Nạp lên danh sách hóa đơn theo ngày
@@ -84,6 +83,13 @@ namespace QuanLyQuanCafe
             cb.DisplayMember = "name";
         }
 
+        void LoadDateTimePickerBill() //Load ngày đầu/cuối tháng cho 2 ô datetimepicker
+        {
+            DateTime today = DateTime.Now;
+            dtpkFromDate.Value = new DateTime(today.Year, today.Month, 1);
+            dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
+        }
+
         void AddTableBinding() //Binding các thông tin bàn ăn từ datagridview lên các textbox
         {
             txtTableID.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "id"));
@@ -103,8 +109,6 @@ namespace QuanLyQuanCafe
             txtFoodName.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "name", true, DataSourceUpdateMode.Never));
             nmFoodPrice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "price", true, DataSourceUpdateMode.Never));
         }
-
-        
 
         #endregion
 

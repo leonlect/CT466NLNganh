@@ -28,15 +28,20 @@ namespace QuanLyQuanCafe.DAO
             return result.Rows.Count > 0;
         }
 
-        public Account GetAccountByUserName(string userName)
+        public bool UpdateAccount(string userName, string displayName, string pass, string newPass)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM ACCOUNT WHERE userName = " + userName);
+            int result = DataProvider.Instance.ExecuteNonQuery("EXEC USP_UpdateAccount @userName , @displayName , @password , @newPassword", new object[] { userName, displayName, pass, newPass });
+            return result > 0; 
+        }
+
+        public Account GetAccountByUserName(string userName) //Lấy ra toàn bộ thông tin Account
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM ACCOUNT WHERE userName = '" + userName + "'");
 
             foreach ( DataRow item in data.Rows)
             {
                 return new Account(item);
             }
-
             return null;
         }
 

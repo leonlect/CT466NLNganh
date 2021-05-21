@@ -140,16 +140,24 @@ GO
 
 ALTER TABLE Bill
 ALTER COLUMN DateCheckOut DATE NULL
+GO
+
 
 --Thêm Bill
 INSERT Bill(DateCheckIn, DateCheckOut, idTable, status)
 VALUES (GETDATE(), NULL, 1, 0)
+GO
+
 
 INSERT Bill(DateCheckIn, DateCheckOut, idTable, status)
 VALUES (GETDATE(), NULL, 2, 0)
+GO
+
 
 INSERT Bill(DateCheckIn, DateCheckOut, idTable, status)
 VALUES (GETDATE(), GETDATE(), 2, 1)
+GO
+
 
 CREATE TABLE BillInfo --BillInfo
 (
@@ -165,18 +173,23 @@ GO
 --Thêm billInfo
 INSERT BillInfo(idBill, idFood, count)
 VALUES (4, 1, 2)
+GO
 
 INSERT BillInfo(idBill, idFood, count)
 VALUES (4, 2, 2)
+GO
 
 INSERT BillInfo(idBill, idFood, count)
 VALUES (5, 1, 2)
+GO
 
 INSERT BillInfo(idBill, idFood, count)
 VALUES (5, 6, 2)
+GO
 
 INSERT BillInfo(idBill, idFood, count)
 VALUES (3, 5, 2)
+GO
 
 
 --1. Proc lấy ra toàn bộ tài khoản bằng UserName
@@ -317,7 +330,7 @@ begin
 end
 go
 
-
+--10 Proc thêm danh mục thức ăn
 create proc InsertCategory
 @name nvarchar(100)
 as
@@ -327,6 +340,7 @@ values(@name);
 end
 go
 
+--11 Proc cập nhật danh mục
 create proc UpdateFoodCategory
 @id int, @name nvarchar(100)
 as
@@ -335,6 +349,7 @@ update FoodCategory set name=@name where id=@id
 end
 go
 
+--12 Proc thêm bàn
 create proc InsertTable
 @name nvarchar(100), @status nvarchar(100)
 as
@@ -344,6 +359,7 @@ values(@name,@status);
 end
 go
 
+--13 Proc cập nhật bàn
 create proc UpdateTable
 @id int, @name nvarchar(100), @status nvarchar(100)
 as
@@ -397,7 +413,7 @@ begin
 end
 go
 
---15 PProc lấy ra danh sách hóa đơn từ ngày đến ngày
+--15 Proc lấy ra danh sách hóa đơn từ ngày đến ngày
 CREATE PROC GetListBillByDate
 @checkIn DATE, @checkOut DATE
 AS
@@ -408,19 +424,39 @@ BEGIN
 END
 GO
 
-DROP PROC GetListBillByDate
-
 EXEC GetListBillByDate '20210520','20210520'
+
+--16 Proc cập nhật tài khoản
+CREATE PROC USP_UpdateAccount
+@userName NVARCHAR(100), @displayName NVARCHAR(100), @password NVARCHAR(100), @newPassword NVARCHAR(100)
+AS
+BEGIN
+	DECLARE @isRightPass INT = 0
+	SELECT @isRightPass = COUNT(*) FROM Account WHERE UserName = @userName AND PassWord = @password
+	IF(@isRightPass = 1)
+	BEGIN
+		IF(@newPassword = NULL OR @newPassword = '')
+		BEGIN
+			UPDATE Account SET DisplayName = @displayName WHERE UserName = @userName
+		END
+		ELSE
+			UPDATE Account SET DisplayName = @displayName, PassWord = @password WHERE UserName = @userName
+	END
+END
+GO
+
 
 --Them cot giam gia vao Bill
 ALTER TABLE Bill
 ADD discount INT DEFAULT 0
+GO
 
 update Bill set disCount=0 WHERE discount IS NULL
 go
 
 
 SELECT * FROM Account
+
 SELECT * FROM Bill
 SELECT * FROM BillInfo
 SELECT * FROM Food

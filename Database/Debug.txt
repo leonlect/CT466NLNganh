@@ -2,5 +2,9 @@
 - ĐANG LÀM - Bài 15 thay đổi thông tin cá nhân
 
 
+DTO: Lớp Model
+DAO: Lớp giao tiếp CSDL
+
+
 
 

@@ -21,9 +21,20 @@ namespace QuanLyQuanCafe
 {
     public partial class fTableManager : DevExpress.XtraEditors.XtraForm
     {
-        public fTableManager()
+
+        private Account loginAccount;
+
+        public Account LoginAccount
+        { 
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(loginAccount.Type); }
+        }
+
+        public fTableManager(Account acc)
         {
             InitializeComponent();
+
+            this.LoginAccount = acc;
 
             LoadTable(); //Load dữ liệu bàn
 
@@ -35,6 +46,17 @@ namespace QuanLyQuanCafe
 
 
         #region Method
+
+        void ChangeAccount(int type) //Kiểm tra loại tài khoản
+        {
+            adminToolStripMenuItem.Enabled = type == 1;
+            if(loginAccount.Type == 1) {
+                tàiKhoảnToolStripMenuItem.Text += " (" + loginAccount.DisplayName + " - Admin)";
+            } else
+            {
+                tàiKhoảnToolStripMenuItem.Text += " (" + loginAccount.DisplayName + " - Nhân viên)";
+            }  
+        }
 
         void LoadCategory() //Nạp lên combobox danh mục món ID.
         {
@@ -131,7 +153,7 @@ namespace QuanLyQuanCafe
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAccountProfile f = new fAccountProfile();
+            fAccountProfile f = new fAccountProfile(loginAccount);
             f.ShowDialog();
         }
 
@@ -228,6 +250,11 @@ namespace QuanLyQuanCafe
             }
             else {
             //Lấy ra ID Bill
+            if(txtTotalPrice.Text.Equals(""))
+            {
+                MessageBox.Show("Trong bàn phải có món đã được gọi mới có thể Thanh toán !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             int idBill = BillDAO.Instance.GetUncheckBillIDByTableID(table.ID);
             //Lấy ra khuyến mãi
             int discount = (int)nmDiscount.Value;
@@ -246,9 +273,7 @@ namespace QuanLyQuanCafe
                 }
             }
           }
-          #endregion
-      
-        
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadTable();
@@ -256,15 +281,21 @@ namespace QuanLyQuanCafe
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
         {
-            
+
             int id1 = (lsvBill.Tag as Table).ID;
             int id2 = (cboSwitchTable.SelectedItem as Table).ID;
-            if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} qua bàn {1} không ?", (lsvBill.Tag as Table).Name, (cboSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel )== DialogResult.OK)
-            { 
+            if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} qua bàn {1} không ?", (lsvBill.Tag as Table).Name, (cboSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
                 TableDAO.Instance.SwitchTable(id1, id2);
-                LoadTable(); 
+                LoadTable();
             }
 
         }
+        #endregion
+
+
+
+
+
     }
 }
