@@ -1,16 +1,5 @@
-- Sửa bug chưa update DateCheckOut vào Bill - Đã sửa;
-- ĐANG LÀM - Bài 15 thay đổi thông tin cá nhân
-
-
-DTO: Lớp Model
-DAO: Lớp giao tiếp CSDL
-
-BindingSource foodList = new BindingSource();
-dtgvFood.DataSource = foodList;
-        void LoadListFood() //Nạp lên danh sách thức ăn.
-        {
-            foodList.DataSource = FoodDAO.Instance.GetListFood();
-        }
+- Chạy QuanLyQuanCafe.sql
+- Mở VS > Extensions > Manage Extensions > tìm report để cài.
 
 
 

@@ -423,6 +423,7 @@
             this.cbFood.Size = new System.Drawing.Size(210, 26);
             this.cbFood.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbFood.TabIndex = 1;
+            this.cbFood.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbFood_KeyPress);
             // 
             // cbCategory
             // 
@@ -440,6 +441,7 @@
             this.cbCategory.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbCategory.TabIndex = 0;
             this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            this.cbCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbCategory_KeyPress);
             // 
             // flpTable
             // 

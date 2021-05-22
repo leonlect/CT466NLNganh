@@ -244,7 +244,7 @@
             // 
             this.btnViewbill.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewbill.Appearance.Options.UseFont = true;
-            this.btnViewbill.Location = new System.Drawing.Point(522, 10);
+            this.btnViewbill.Location = new System.Drawing.Point(498, 10);
             this.btnViewbill.Name = "btnViewbill";
             this.btnViewbill.Size = new System.Drawing.Size(111, 36);
             this.btnViewbill.TabIndex = 5;
