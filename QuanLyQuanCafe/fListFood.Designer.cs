@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fListFood));
             this.dtgvFood = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,18 +52,18 @@
             this.name,
             this.CategoryID,
             this.price});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvFood.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvFood.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvFood.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvFood.Location = new System.Drawing.Point(10, 108);
             this.dtgvFood.Name = "dtgvFood";
-            this.dtgvFood.Size = new System.Drawing.Size(580, 271);
+            this.dtgvFood.Size = new System.Drawing.Size(583, 379);
             this.dtgvFood.TabIndex = 12;
             // 
             // id
@@ -78,7 +78,7 @@
             // name
             // 
             this.name.DataPropertyName = "name";
-            this.name.FillWeight = 226.9164F;
+            this.name.FillWeight = 24.77591F;
             this.name.HeaderText = "Tên món";
             this.name.Name = "name";
             this.name.Width = 437;
@@ -95,10 +95,10 @@
             // price
             // 
             this.price.DataPropertyName = "price";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.price.DefaultCellStyle = dataGridViewCellStyle3;
-            this.price.FillWeight = 5.909286F;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.price.DefaultCellStyle = dataGridViewCellStyle1;
+            this.price.FillWeight = 208.0498F;
             this.price.HeaderText = "Giá";
             this.price.Name = "price";
             this.price.Width = 98;
@@ -110,14 +110,14 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(10, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(580, 81);
+            this.panel3.Size = new System.Drawing.Size(583, 81);
             this.panel3.TabIndex = 11;
             // 
             // btnSearchFood
             // 
             this.btnSearchFood.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchFood.Appearance.Options.UseFont = true;
-            this.btnSearchFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowFood.ImageOptions.Image")));
+            this.btnSearchFood.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchFood.ImageOptions.Image")));
             this.btnSearchFood.Location = new System.Drawing.Point(262, 24);
             this.btnSearchFood.Name = "btnSearchFood";
             this.btnSearchFood.Size = new System.Drawing.Size(93, 27);
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 391);
+            this.ClientSize = new System.Drawing.Size(604, 499);
             this.Controls.Add(this.dtgvFood);
             this.Controls.Add(this.panel3);
             this.Name = "fListFood";

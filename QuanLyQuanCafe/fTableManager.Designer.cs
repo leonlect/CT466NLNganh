@@ -44,6 +44,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -184,6 +185,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
@@ -199,6 +201,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(482, 163);
             this.panel3.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(304, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 19);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "(VND)";
             // 
             // label7
             // 
@@ -216,9 +228,9 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 19);
+            this.label6.Size = new System.Drawing.Size(88, 19);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Giảm giá(%);";
+            this.label6.Text = "Giảm giá(%):";
             // 
             // label5
             // 
@@ -232,10 +244,10 @@
             // 
             // txtSelectTable
             // 
-            this.txtSelectTable.Enabled = false;
             this.txtSelectTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSelectTable.Location = new System.Drawing.Point(121, 12);
             this.txtSelectTable.Name = "txtSelectTable";
+            this.txtSelectTable.ReadOnly = true;
             this.txtSelectTable.Size = new System.Drawing.Size(110, 26);
             this.txtSelectTable.TabIndex = 13;
             // 
@@ -270,7 +282,7 @@
             this.txtTotalPrice.Location = new System.Drawing.Point(121, 115);
             this.txtTotalPrice.Name = "txtTotalPrice";
             this.txtTotalPrice.ReadOnly = true;
-            this.txtTotalPrice.Size = new System.Drawing.Size(210, 27);
+            this.txtTotalPrice.Size = new System.Drawing.Size(180, 27);
             this.txtTotalPrice.TabIndex = 10;
             this.txtTotalPrice.Text = "0";
             this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -442,6 +454,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1223, 646);
             this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel2);
@@ -451,7 +464,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý quán cafe v.1.0";
+            this.Text = "Niên luận ngành CT466 - Phần mềm quản lý quán cafe ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel.ResumeLayout(false);
@@ -502,5 +515,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.Label label8;
     }
 }

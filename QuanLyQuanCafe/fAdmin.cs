@@ -56,6 +56,12 @@ namespace QuanLyQuanCafe
         void LoadListBillByDate(DateTime checkIn, DateTime checkOut) //Nạp lên danh sách hóa đơn theo ngày
         {
             dtgvBill.DataSource = BillDAO.Instance.GetListBillByDate(checkIn, checkOut);
+            double sum = 0;
+            for (int i = 0; i < dtgvBill.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(dtgvBill.Rows[i].Cells[4].Value);
+            }
+            txtTotal.Text = sum.ToString("N0") +"(VND)";
         }
 
         void LoadCategoryList() //Nạp lên danh mục món
@@ -232,46 +238,74 @@ namespace QuanLyQuanCafe
 
         private void btnAddFood_Click(object sender, EventArgs e) //Xử lý sự kiện nút thêm
         {
-            string name = txtFoodName.Text;
-            int caterogyID = (cbCategory.SelectedItem as Category).ID;
-            float price = (float)nmFoodPrice.Value;
-
-            if (FoodDAO.Instance.InsertFood(name, caterogyID, price))
+            try
             {
-                MessageBox.Show("Thêm món thành công !");
-                LoadListFood();
-
-                if (insertFood != null)
+                if (txtFoodName.Text.Equals(""))
                 {
-                    insertFood(this, new EventArgs());
+                    MessageBox.Show("Tên món không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-            }
-            else
+                if (cbCategory.SelectedText.Equals(""))
+                {
+                    MessageBox.Show("Danh mục món không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string name = txtFoodName.Text;
+                int caterogyID = (cbCategory.SelectedItem as Category).ID;
+                float price = (float)nmFoodPrice.Value;
+
+                if (FoodDAO.Instance.InsertFood(name, caterogyID, price))
+                {
+                    MessageBox.Show("Thêm món thành công !");
+                    LoadListFood();
+                    if (insertFood != null)
+                    {
+                        insertFood(this, new EventArgs());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(" Lỗi ! Thêm món thất bại !");
+                }
+            } catch
             {
-                MessageBox.Show(" Lỗi ! Thêm món thành công !");
+                MessageBox.Show("Error !");
             }
         }
 
         private void btnEditFood_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtFoodID.Text);
-            string name = txtFoodName.Text;
-            int caterogyID = (cbCategory.SelectedItem as Category).ID;
-            float price = (float)nmFoodPrice.Value;
-
-            if (FoodDAO.Instance.UpdateFood(id, name, caterogyID, price))
+            try
             {
-                MessageBox.Show("Sửa món thành công !");
-                LoadListFood();
-                if (updateFood != null)
+                if (txtFoodName.Text.Equals(""))
                 {
-                    updateFood(this, new EventArgs());
+                    MessageBox.Show("Tên món không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-            }
-            else
-            {
-                MessageBox.Show(" Lỗi ! Sửa không thành công !");
-            }
+                if (cbCategory.SelectedText.Equals(""))
+                {
+                    MessageBox.Show("Danh mục món không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                int id = Convert.ToInt32(txtFoodID.Text);
+                string name = txtFoodName.Text;
+                int caterogyID = (cbCategory.SelectedItem as Category).ID;
+                float price = (float)nmFoodPrice.Value;
+
+                if (FoodDAO.Instance.UpdateFood(id, name, caterogyID, price))
+                {
+                    MessageBox.Show("Sửa món thành công !");
+                    LoadListFood();
+                    if (updateFood != null)
+                    {
+                        updateFood(this, new EventArgs());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(" Lỗi ! Sửa không thành công !");
+                }
+            } catch { }
         }
 
         private void btnDeleteFood_Click(object sender, EventArgs e)
@@ -301,6 +335,11 @@ namespace QuanLyQuanCafe
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
+            if(txtCategoryName.Text.Equals(""))
+            {
+                MessageBox.Show("Tên danh mục món không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             String name = txtCategoryName.Text;
             if (CategoryDAO.Instance.InsertCategory(name))
             {
@@ -323,6 +362,11 @@ namespace QuanLyQuanCafe
 
         private void btnEditCategory_Click(object sender, EventArgs e)
         {
+            if (txtCategoryName.Text.Equals(""))
+            {
+                MessageBox.Show("Tên danh mục món không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int id = Convert.ToInt32(txtCategoryID.Text);
             String name = txtCategoryName.Text;
             if (CategoryDAO.Instance.UpdateFoodCategory(id, name))
@@ -361,6 +405,11 @@ namespace QuanLyQuanCafe
 
         private void btnAddTable_Click(object sender, EventArgs e)
         {
+            if (txtTableName.Text.Equals(""))
+            {
+                MessageBox.Show("Tên bàn không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string tablename = txtTableName.Text;
             string tablestatus = "Trống";
             if (TableDAO.Instance.InsertTable(tablename, tablestatus))
@@ -376,28 +425,39 @@ namespace QuanLyQuanCafe
             {
                 MessageBox.Show("Thêm bàn không thành công !");
             }
-
-
-
         }
 
         private void btnEditTable_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtTableID.Text);
-            String name = txtTableName.Text;
-            String tablestatus = cbTableStatus.SelectedItem.ToString();
-            if (TableDAO.Instance.UpdateTable(id, name, tablestatus))
+            try
             {
-                MessageBox.Show("Sửa thành công !");
-                LoadListTable();
-                if (updateTable != null)
+                if (txtCategoryName.Text.Equals(""))
                 {
-                    updateTable(this, new EventArgs());
+                    MessageBox.Show("Tên bàn không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                int id = Convert.ToInt32(txtTableID.Text);
+                String name = txtTableName.Text;
+                String tablestatus = cbTableStatus.SelectedItem.ToString();
+                if (TableDAO.Instance.UpdateTable(id, name, tablestatus))
+                {
+                    MessageBox.Show("Sửa thành công !");
+                    LoadListTable();
+                    if (updateTable != null)
+                    {
+                        updateTable(this, new EventArgs());
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Sửa không thành công !");
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Sửa không thành công !");
+                MessageBox.Show("Tên bàn không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                LoadListTable();
+                return;
             }
         }
 
@@ -453,6 +513,16 @@ namespace QuanLyQuanCafe
 
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
+            if(txtUserName.Text.Equals(""))
+            {
+                MessageBox.Show("Tên tài khoản không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtDisplayName.Text.Equals(""))
+            {
+                MessageBox.Show("Tên hiển thị không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string userName = txtUserName.Text;
             string displayName = txtDisplayName.Text;
             int type = (int)numType.Value;
@@ -480,6 +550,16 @@ namespace QuanLyQuanCafe
 
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
+            if (txtUserName.Text.Equals(""))
+            {
+                MessageBox.Show("Tên tài khoản không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtDisplayName.Text.Equals(""))
+            {
+                MessageBox.Show("Tên hiển thị không được để trống !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string userName = txtUserName.Text;
             string displayName = txtDisplayName.Text;
             int type = (int)numType.Value;
@@ -503,6 +583,7 @@ namespace QuanLyQuanCafe
             }
             LoadAccount();
         }
+
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {
             string userName = txtUserName.Text;
@@ -513,21 +594,38 @@ namespace QuanLyQuanCafe
         {
             LoadAccount();
         }
+
         void ResetPass(string userName)
         {
             if (AccountDAO.Instance.ResetPassword(userName))
             {
-                MessageBox.Show("Đặt lại mật khẩu mặc định thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đặt lại mật khẩu cho tài khoản " + userName +" thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 MessageBox.Show("Đặt lại mật khẩu thất bại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
             string userName = txtUserName.Text;
             ResetPass(userName);
+        }
+
+        private void cbCategory_KeyPress(object sender, KeyPressEventArgs e) //Sự kiện ko cho nhập lên combobox
+        {
+            e.Handled = true;
+        }
+
+        private void cbTableStatus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void textBoxX1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
