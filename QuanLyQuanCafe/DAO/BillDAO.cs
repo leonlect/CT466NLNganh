@@ -40,6 +40,10 @@ namespace QuanLyQuanCafe.DAO
             return DataProvider.Instance.ExecuteQuery("EXEC GetListBillByDate @checkIn , @checkOut", new object[] { checkIn , checkOut });
         }
 
+        public DataTable GetListBillAll()
+        {
+            return DataProvider.Instance.ExecuteQuery("EXEC GetListBillAll");
+        }
         public void InsertBill(int id)
         {
             DataProvider.Instance.ExecuteNonQuery("EXEC USP_InsertBill @idTable", new object[]{id});

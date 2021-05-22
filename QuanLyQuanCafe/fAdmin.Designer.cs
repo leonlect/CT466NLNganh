@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcTable = new DevExpress.XtraTab.XtraTabControl();
             this.tpBill = new DevExpress.XtraTab.XtraTabPage();
             this.txtTotal = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -115,6 +116,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.tpBillAll = new DevExpress.XtraTab.XtraTabPage();
+            this.dtgvBillAll = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.btnShowBillAll = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tcTable)).BeginInit();
             this.tcTable.SuspendLayout();
             this.tpBill.SuspendLayout();
@@ -137,6 +141,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numType)).BeginInit();
+            this.tpBillAll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBillAll)).BeginInit();
             this.SuspendLayout();
             // 
             // tcTable
@@ -154,7 +160,8 @@
             this.tpFood,
             this.tpCategory,
             this.tpTable,
-            this.tpAccount});
+            this.tpAccount,
+            this.tpBillAll});
             // 
             // tpBill
             // 
@@ -1133,6 +1140,43 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "Tên tài khoản:";
             // 
+            // tpBillAll
+            // 
+            this.tpBillAll.Controls.Add(this.btnShowBillAll);
+            this.tpBillAll.Controls.Add(this.dtgvBillAll);
+            this.tpBillAll.Name = "tpBillAll";
+            this.tpBillAll.Size = new System.Drawing.Size(757, 482);
+            this.tpBillAll.Text = "Danh sách hóa đơn";
+            // 
+            // dtgvBillAll
+            // 
+            this.dtgvBillAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvBillAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvBillAll.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dtgvBillAll.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dtgvBillAll.Location = new System.Drawing.Point(3, 3);
+            this.dtgvBillAll.Name = "dtgvBillAll";
+            this.dtgvBillAll.Size = new System.Drawing.Size(751, 426);
+            this.dtgvBillAll.TabIndex = 0;
+            // 
+            // btnShowBillAll
+            // 
+            this.btnShowBillAll.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowBillAll.Appearance.Options.UseFont = true;
+            this.btnShowBillAll.Location = new System.Drawing.Point(643, 435);
+            this.btnShowBillAll.Name = "btnShowBillAll";
+            this.btnShowBillAll.Size = new System.Drawing.Size(111, 36);
+            this.btnShowBillAll.TabIndex = 6;
+            this.btnShowBillAll.Text = "Hiển thị";
+            this.btnShowBillAll.Click += new System.EventHandler(this.btnShowBillAll_Click);
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1171,6 +1215,8 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numType)).EndInit();
+            this.tpBillAll.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBillAll)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1257,5 +1303,8 @@
         private System.Windows.Forms.NumericUpDown numType;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTotal;
         private System.Windows.Forms.Label label16;
+        private DevExpress.XtraTab.XtraTabPage tpBillAll;
+        private DevExpress.XtraEditors.SimpleButton btnShowBillAll;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dtgvBillAll;
     }
 }

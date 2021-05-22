@@ -445,7 +445,15 @@ BEGIN
 END
 GO
 
-DROP PROC USP_UpdateAccount
+--17 Proc lấy ra toàn bộ hóa đơn
+CREATE PROC GetListBillAll
+AS
+BEGIN
+	SELECT A.id AS[Mã hóa đơn], A.DateCheckIn AS[Ngày vào], A.DateCheckOut AS[Ngày ra], A.disCount AS[Giảm giá], A.totalPrice AS[Tổng tiền]
+	FROM Bill AS A
+	WHERE A.status = 1
+END
+GO
 
 
 --Them cot giam gia vao Bill

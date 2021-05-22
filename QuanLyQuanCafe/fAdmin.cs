@@ -64,6 +64,11 @@ namespace QuanLyQuanCafe
             txtTotal.Text = sum.ToString("N0") +"(VND)";
         }
 
+        void LoadListBillAll() //Nạp lên danh sách hóa đơn
+        {
+            dtgvBillAll.DataSource = BillDAO.Instance.GetListBillAll();
+        }
+
         void LoadCategoryList() //Nạp lên danh mục món
         {
             categoryList.DataSource = CategoryDAO.Instance.GetListCategory();
@@ -463,19 +468,26 @@ namespace QuanLyQuanCafe
 
         private void btnDeleteTable_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtTableID.Text);
-            if (TableDAO.Instance.DeleteTable(id))
+            try
             {
-                MessageBox.Show("Xóa thành công");
-                LoadListTable();
-                if (deleteTable != null)
+                int id = Convert.ToInt32(txtTableID.Text);
+                if (TableDAO.Instance.DeleteTable(id))
                 {
-                    deleteTable(this, new EventArgs());
+                    MessageBox.Show("Xóa thành công");
+                    LoadListTable();
+                    if (deleteTable != null)
+                    {
+                        deleteTable(this, new EventArgs());
+                    }
                 }
-            }
-            else
+                else
+                {
+                    MessageBox.Show("Xóa thất bại");
+                }
+            }catch
             {
-                MessageBox.Show("Xóa thất bại");
+                MessageBox.Show("Bàn này đã được tính vào doanh thu. Xóa thất bại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
         }
        
@@ -628,5 +640,9 @@ namespace QuanLyQuanCafe
             e.Handled = true;
         }
 
+        private void btnShowBillAll_Click(object sender, EventArgs e)
+        {
+            LoadListBillAll();
+        }
     }
 }
