@@ -61,7 +61,9 @@ namespace QuanLyQuanCafe
             {
                 sum += Convert.ToDouble(dtgvBill.Rows[i].Cells[4].Value);
             }
-            txtTotal.Text = sum.ToString("N0") +"(VND)";
+            txtTotal.Text = sum.ToString("N0") + "(VND)" ;
+            txtTotal.TextAlign = HorizontalAlignment.Right;
+
         }
 
         void LoadListBillAll() //Nạp lên danh sách hóa đơn
@@ -492,8 +494,14 @@ namespace QuanLyQuanCafe
         }
        
         private void btnViewbill_Click(object sender, EventArgs e)
-        {
-            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+        {try
+            {
+                LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+            }
+            catch
+            {
+                MessageBox.Show("Dữ liệu không được để trống. Kiểm tra lại ngày trên 2 ô chọn ngày !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnSearchFoodName_Click(object sender, EventArgs e) //Sự kiện nhấn nút tìm kiếm thức ăn
@@ -643,6 +651,8 @@ namespace QuanLyQuanCafe
         private void btnShowBillAll_Click(object sender, EventArgs e)
         {
             LoadListBillAll();
+            txtBillCount.Text = dtgvBillAll.Rows.Count.ToString();
         }
+
     }
 }

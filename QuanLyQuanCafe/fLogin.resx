@@ -193,4 +193,14 @@
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="fLogin.IconOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAsdEVYdFRpdGxlAEVtcGxveWVlcztWaWV3RW1wbG95ZWVzO0VtcGxveWVlc1ZpZXc79oXWqgAA
+        AM5JREFUOE+l0T8OAUEUx/G9AHcgolCJUu0AKhJHUouaQiGu4AYiGp2CKLYgEp0/zfi+zWzy5mWK2Sg+
+        yb438/tl2cw595fosopgmEy3pTrmyPHADDUU5zoTDOUFrOCMBZILvrAFLyQXPGEL7kgu2MAWrJFc0IP+
+        GfIsu+QCMYJ8BTH2u4LOBIO/IMErmn4WDVwwlFlngoHDLj6Q1z6ghTaOfidnHZ2xBbE/z1rqjC24mcsx
+        uc7YgrO5HHPSGVswwB5vf1mT3Q59nQkKqnPZD9icmcPQJBOtAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

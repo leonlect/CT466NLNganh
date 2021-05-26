@@ -150,6 +150,7 @@
             this.ClientSize = new System.Drawing.Size(604, 499);
             this.Controls.Add(this.dtgvFood);
             this.Controls.Add(this.panel3);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fListFood.IconOptions.Image")));
             this.Name = "fListFood";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh sách thức ăn";

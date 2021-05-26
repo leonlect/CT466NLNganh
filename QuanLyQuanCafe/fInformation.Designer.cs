@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fInformation));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,44 +54,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
             // 
-            // labelX1
+            // labelX5
             // 
             // 
             // 
             // 
-            this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(6, 35);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(414, 23);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Môn: Niên luận ngành CNTT- CT466";
-            // 
-            // labelX2
-            // 
-            // 
-            // 
-            // 
-            this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(6, 122);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(414, 23);
-            this.labelX2.TabIndex = 1;
-            this.labelX2.Text = "MSSV: S1800005 - Công nghệ thông tin K44";
-            // 
-            // labelX3
-            // 
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(6, 64);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(414, 23);
-            this.labelX3.TabIndex = 2;
-            this.labelX3.Text = "Giảng viên hướng dẫn: PGS. TS. Trần Cao Đệ";
+            this.labelX5.BackgroundStyle.Class = "";
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Location = new System.Drawing.Point(6, 151);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(437, 23);
+            this.labelX5.TabIndex = 4;
+            this.labelX5.Text = "Đề tài: Phần mềm quản lý quán cafe trên nền tảng C# Winforms ";
             // 
             // labelX4
             // 
@@ -105,18 +80,44 @@
             this.labelX4.TabIndex = 3;
             this.labelX4.Text = "Sinh viên thực hiện: Lê Duy Anh";
             // 
-            // labelX5
+            // labelX3
             // 
             // 
             // 
             // 
-            this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(6, 151);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(437, 23);
-            this.labelX5.TabIndex = 4;
-            this.labelX5.Text = "Đề tài: Phần mềm quản lý quán cafe trên nền tảng C# Winforms ";
+            this.labelX3.BackgroundStyle.Class = "";
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Location = new System.Drawing.Point(6, 64);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(414, 23);
+            this.labelX3.TabIndex = 2;
+            this.labelX3.Text = "Giảng viên hướng dẫn: PGS. TS. Trần Cao Đệ";
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.Class = "";
+            this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX2.Location = new System.Drawing.Point(6, 122);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(414, 23);
+            this.labelX2.TabIndex = 1;
+            this.labelX2.Text = "MSSV: S1800005 - Công nghệ thông tin K44";
+            // 
+            // labelX1
+            // 
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.Class = "";
+            this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX1.Location = new System.Drawing.Point(6, 35);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(414, 23);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Môn: Niên luận ngành CNTT- CT466";
             // 
             // fInformation
             // 
@@ -124,6 +125,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 221);
             this.Controls.Add(this.groupBox2);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fInformation.IconOptions.Image")));
             this.Name = "fInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giới thiệu";

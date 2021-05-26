@@ -30,7 +30,7 @@ CREATE TABLE Account
 GO
 
 INSERT INTO Account(UserName, DisplayName, PassWord, Type)
-VALUES ('admin', N'Duy Anh', 'admin', 1)
+VALUES ('admin', N'Duy Anh Admin', 'admin', 1)
 GO
 
 INSERT INTO Account(UserName, DisplayName, PassWord, Type)
@@ -143,22 +143,6 @@ ALTER COLUMN DateCheckOut DATE NULL
 GO
 
 
---Thêm Bill
-INSERT Bill(DateCheckIn, DateCheckOut, idTable, status)
-VALUES (GETDATE(), NULL, 1, 0)
-GO
-
-
-INSERT Bill(DateCheckIn, DateCheckOut, idTable, status)
-VALUES (GETDATE(), NULL, 2, 0)
-GO
-
-
-INSERT Bill(DateCheckIn, DateCheckOut, idTable, status)
-VALUES (GETDATE(), GETDATE(), 2, 1)
-GO
-
-
 CREATE TABLE BillInfo --BillInfo
 (
 	id INT IDENTITY PRIMARY KEY,
@@ -170,28 +154,6 @@ CREATE TABLE BillInfo --BillInfo
 )
 GO
 
---Thêm billInfo
-INSERT BillInfo(idBill, idFood, count)
-VALUES (4, 1, 2)
-GO
-
-INSERT BillInfo(idBill, idFood, count)
-VALUES (4, 2, 2)
-GO
-
-INSERT BillInfo(idBill, idFood, count)
-VALUES (5, 1, 2)
-GO
-
-INSERT BillInfo(idBill, idFood, count)
-VALUES (5, 6, 2)
-GO
-
-INSERT BillInfo(idBill, idFood, count)
-VALUES (3, 5, 2)
-GO
-
-
 --1. Proc lấy ra toàn bộ tài khoản bằng UserName
 CREATE PROC USP_GetAccountByUserName
 @username NVARCHAR(100)
@@ -199,12 +161,6 @@ AS
 BEGIN
 	SELECT * FROM dbo.Account WHERE UserName = @username
 END
-GO
-
-EXEC USP_GetAccountByUserName @username = 'admin'
-GO
-
-SELECT * FROM Account WHERE UserName = 'admin' AND PassWord = 'admin'
 GO
 
 --2. Proc đăng nhập login truyền tham số
@@ -226,18 +182,11 @@ BEGIN
 END
 GO
 
-SELECT * FROM TableFood
-GO
-
 --4 Lấy ra danh sách bàn ăn
 CREATE PROC USP_GetTableList
 AS
 	SELECT * FROM dbo.TableFood
 GO
-
-EXEC USP_GetTableList
-GO
-
 
 --5 Proc thêm Bill
 ALTER PROC USP_InsertBill
@@ -424,8 +373,6 @@ BEGIN
 END
 GO
 
-EXEC GetListBillByDate '20210520','20210520'
-
 --16 Proc cập nhật tài khoản
 CREATE PROC USP_UpdateAccount
 @userName NVARCHAR(100), @displayName NVARCHAR(100), @password NVARCHAR(100), @newPassword NVARCHAR(100)
@@ -455,7 +402,6 @@ BEGIN
 END
 GO
 
-
 --Them cot giam gia vao Bill
 ALTER TABLE Bill
 ADD discount INT DEFAULT 0
@@ -466,15 +412,7 @@ go
 
 
 SELECT * FROM Account
-
 SELECT * FROM Bill
 SELECT * FROM BillInfo
 SELECT * FROM Food
 SELECT * FROM FoodCategory
-
-SELECT B.name AS [Tên danh mục],A.name AS [Tên món], A.price AS [Giá]
-FROM Food AS A, FoodCategory AS B
-WHERE A.idCategory = B.id
-
-INSERT INTO Account(UserName, DisplayName,PassWord , Type)
-VALUES ('nv2', N'NV2', '12345' ,0)

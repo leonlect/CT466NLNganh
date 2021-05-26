@@ -261,6 +261,7 @@ namespace QuanLyQuanCafe
             if (table == null)
             {                                  //Lấy ra ID bill hiện tại - Truong hợp Bill chưa tồn tại.
                 MessageBox.Show("Vui lòng chọn bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else {
             //Lấy ra ID Bill
@@ -295,15 +296,21 @@ namespace QuanLyQuanCafe
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
         {
-
-            int id1 = (lsvBill.Tag as Table).ID;
-            int id2 = (cboSwitchTable.SelectedItem as Table).ID;
-            if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} qua bàn {1} không ?", (lsvBill.Tag as Table).Name, (cboSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                TableDAO.Instance.SwitchTable(id1, id2);
-                LoadTable();
+            Table table = lsvBill.Tag as Table;
+            if (table == null)
+            {                                  //Lấy ra ID bill hiện tại - Truong hợp Bill chưa tồn tại.
+                MessageBox.Show("Vui lòng chọn bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            else
+            {
+                int id1 = (lsvBill.Tag as Table).ID;
+                int id2 = (cboSwitchTable.SelectedItem as Table).ID;
+                if (MessageBox.Show(string.Format("Bạn có muốn chuyển bàn {0} qua bàn {1} không ?", (lsvBill.Tag as Table).Name, (cboSwitchTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    TableDAO.Instance.SwitchTable(id1, id2);
+                    LoadTable();
+                }
+            }
         }
 
         private void danhMụcToolStripMenuItem_Click(object sender, EventArgs e)

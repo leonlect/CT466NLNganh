@@ -463,6 +463,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.menuStrip1);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fTableManager.IconOptions.Image")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

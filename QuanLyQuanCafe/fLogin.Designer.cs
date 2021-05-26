@@ -160,7 +160,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 176);
             this.Controls.Add(this.panel2);
-            this.IconOptions.Image = global::QuanLyQuanCafe.Properties.Resources.images;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("fLogin.IconOptions.Image")));
             this.MaximizeBox = false;
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
