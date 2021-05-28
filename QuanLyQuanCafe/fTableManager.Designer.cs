@@ -316,6 +316,11 @@
             // 
             this.nmDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nmDiscount.Location = new System.Drawing.Point(121, 83);
+            this.nmDiscount.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.nmDiscount.Name = "nmDiscount";
             this.nmDiscount.Size = new System.Drawing.Size(73, 26);
             this.nmDiscount.TabIndex = 7;
